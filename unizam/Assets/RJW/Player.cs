@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public Image fadeImage;
+
     public Vector2 inputVec;
     public float speed;
 
@@ -40,7 +43,17 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy")) {
-            SceneManager.LoadScene("BattleScene");
+            StartCoroutine(Fade());
         }
+    }
+
+    IEnumerator Fade() {
+        float fadeCount = 0;
+        while (fadeCount < 1.0f) {
+            fadeCount += 0.01f;
+            yield return new WaitForSeconds(0.01f);
+            fadeImage.color = new Color(0, 0, 0, fadeCount);
+        }
+        SceneManager.LoadScene("BattleScene");
     }
 }
