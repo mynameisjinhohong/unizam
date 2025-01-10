@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70aaf2776b2af464780be9656d1870b3, type: 3}
-  m_Name: Enemy1
+  m_Name: Enemy2
   m_EditorClassIdentifier: 
   enemy:
-    hp: 20
-    enemyPrefab: {fileID: 2418270481052393022, guid: d6147c559a1ecf54d85227aa978ca07b, type: 3}
+    hp: 0
+    enemyPrefab: {fileID: 0}
     behaviours:
-    - {fileID: 11400000, guid: 510dded60cb083641828a94d472cce35, type: 2}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}

@@ -13,7 +13,6 @@ public class EnemeyData : ScriptableObject
 [Serializable]
 public class Character
 {
-    public Sprite sprite;
     public int hp;
 }
 
@@ -27,17 +26,26 @@ public class PlayerCharacter : Character
 [System.Serializable]
 public class EnemyCharacter : Character
 {
+    public GameObject enemyPrefab;
     public List<Behaviour> behaviours;
 }
 
 
 public class Behaviour : ScriptableObject
 {
+    public BehaviourState state;
+    public bool all;
     public virtual void Do(Character[] target)
     {
 
     }
 }
 
+[System.Serializable]
+public enum BehaviourState
+{
+    special,
+    nomal
+}
 
 
