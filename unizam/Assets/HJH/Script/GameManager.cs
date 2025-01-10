@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public List<EnemeyData> enemies;
+    public int maxHp;
+    public int maxMp;
     public PlayerCharacter player;
     private void Awake()
     {
@@ -22,6 +24,18 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
 
+    }
+
+    private void Update()
+    {
+        if(player.hp > maxHp)
+        {
+            player.hp = maxHp;
+        }
+        if(player.mp > maxMp)
+        {
+            player.mp = maxMp;
+        }
     }
 
 }

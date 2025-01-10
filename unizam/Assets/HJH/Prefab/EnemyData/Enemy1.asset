@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy1
   m_EditorClassIdentifier: 
   enemy:
-    hp: 20
+    hp: 10
     enemyPrefab: {fileID: 2418270481052393022, guid: d6147c559a1ecf54d85227aa978ca07b, type: 3}
     behaviours:
     - {fileID: 11400000, guid: 510dded60cb083641828a94d472cce35, type: 2}

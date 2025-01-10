@@ -35,6 +35,7 @@ public class Behaviour : ScriptableObject
 {
     public BehaviourState state;
     public bool all;
+    public string behaviourName;
     public virtual void Do(Character[] target)
     {
 

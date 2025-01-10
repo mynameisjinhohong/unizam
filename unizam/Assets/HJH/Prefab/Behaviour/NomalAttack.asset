@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   all: 0
-  MaxDamage: 0
-  MinDamage: 0
+  behaviourName: 0
+  MaxDamage: 7
+  MinDamage: 4
