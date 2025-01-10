@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-
+        player.hp = maxHp;
     }
 
     private void Update()
