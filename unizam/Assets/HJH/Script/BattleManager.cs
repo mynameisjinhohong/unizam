@@ -490,6 +490,13 @@ public class BattleManager : MonoBehaviour
         GameManager.Instance.player.behaviours.Add(GameManager.Instance.Reward);
         SceneManager.LoadScene("MainScene");
     }
+
+    IEnumerator BattleWinCo()
+    {
+        yield return null;
+    }
+
+
     public GameObject dragon;
     public void DragonPower()
     {
