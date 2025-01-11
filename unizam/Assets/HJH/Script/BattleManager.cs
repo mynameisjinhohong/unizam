@@ -366,11 +366,17 @@ public class BattleManager : MonoBehaviour
     public void Retry()
     {
         //암전되다가 StartScene으로 이동
+        SceneManager.LoadScene("StartScene");
     }
 
     public void Exit()
     {
         //암전 되다가 게임 종료.
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                        Application.Quit(); 
+        #endif
     }
 
 
