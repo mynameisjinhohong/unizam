@@ -4,8 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+public enum monster
+{
+    man,
+    du,
+    gu,
+    snake
+}
+
 public class Encounter : MonoBehaviour
 {
+    public List<EnemeyData> enemy;
+    public bool boss;
+    public Sprite bg;
+    public Behaviour reward;
+
+    public monster monster;
+
     public Image fadeImage; // 페이드 효과 이미지
     public List<Sprite> changeImages; // 변경할 스프라이트 목록
 
@@ -21,7 +36,19 @@ public class Encounter : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            StartCoroutine(Fade());
+            switch (monster)
+            {
+                case monster.du:
+                    StartCoroutine(Fade());
+                    break;
+                case monster.gu:
+                    break;
+                case monster.snake:
+                    break;
+                case monster.man: 
+                    break;
+            }
+
         }
     }
 
@@ -158,7 +185,21 @@ public class Encounter : MonoBehaviour
         monsterImage.color = targetColor;
 
         yield return new WaitForSeconds(1.0f);
+        MoveScnene();
+
+    }
+
+    public void MoveScnene()
+    {
+        for (int i = 0; i < enemy.Count; i++)
+        {
+            GameManager.Instance.enemies.Add(enemy[i]);
+        }
+        GameManager.Instance.bg = bg;
+        GameManager.Instance.boss = boss;
+        GameManager.Instance.Reward = reward;
 
         SceneManager.LoadScene("BattleScene");
+
     }
 }
