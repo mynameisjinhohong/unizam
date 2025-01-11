@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
         // 종료창 활성화
         if (Input.GetKey(KeyCode.Escape) && SceneManager.GetActiveScene().name == "MainScene")
         {
+            canvas.SetActive(true);
             quitUI.SetActive(true);
         }
     }
@@ -87,6 +88,8 @@ public class GameManager : MonoBehaviour
             fadeImage.color = new Color(0, 0, 0, fadeCount); // 검정색의 알파 값만 변경
             yield return new WaitForSeconds(0.01f);
         }
+
+        canvas.SetActive(false);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -99,7 +102,7 @@ public class GameManager : MonoBehaviour
         // MainScene에서는 Canvas 활성화
         else if (scene.name == "MainScene")
         {
-            canvas.SetActive(true);
+            canvas.SetActive(false);
         }
     }
 

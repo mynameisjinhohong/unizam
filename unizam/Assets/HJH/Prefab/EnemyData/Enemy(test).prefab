@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4999649395806495076}
   - component: {fileID: 788439298365380037}
   - component: {fileID: 2239553929825188885}
+  - component: {fileID: -8254377698824839353}
   m_Layer: 0
   m_Name: Enemy(test)
   m_TagString: Enemy
@@ -173,5 +174,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy:
     hp: 0
-    enemyPrefab: {fileID: 0}
+    buffs: []
+    nextBuffs: []
     behaviours: []
+    enemyPrefab: {fileID: 0}
+  hpPos: {fileID: 0}
+  maxHp: 0
+  hpBar: {fileID: 0}
+  BuffParent: {fileID: 0}
+--- !u!114 &-8254377698824839353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7793725269841318842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a715a43bcd96b45a4f0c50f29e4159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeImage: {fileID: 0}
+  changeImages:
+  - {fileID: 21300000, guid: 62991e83a040f574f8dcd3e484415fe6, type: 3}
+  - {fileID: 21300000, guid: 534141b8bfa9a524eb69c4a2a9b96af4, type: 3}
