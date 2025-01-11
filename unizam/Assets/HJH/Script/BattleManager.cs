@@ -32,6 +32,7 @@ public class BattleManager : MonoBehaviour
     }
 
     BattleState state;
+    public int turn;
 
     public BattleState State
     {
@@ -124,13 +125,27 @@ public class BattleManager : MonoBehaviour
         }
         
     }
-
+    public Slider snakeSlider;
     IEnumerator SnakeFade()
     {
-        audioPlay.clip = audios[8];
-        audioPlay.Play();
+        State = BattleState.StartDice;
+        characters = new List<EnemyCharacter>();
+        enemys = new List<GameObject>();
+        player.GetComponent<BattlePlayer>().MakeBuff();
+        GameObject enemy = Instantiate(GameManager.Instance.enemies[0].enemy.enemyPrefab);
+        enemy.GetComponent<BattleEnemy>().enemy.hp = GameManager.Instance.enemies[0].enemy.hp;
+        enemy.GetComponent<BattleEnemy>().enemy.behaviours = GameManager.Instance.enemies[0].enemy.behaviours;
+        for (int j = 0; j < enemy.GetComponent<BattleEnemy>().enemy.behaviours.Count; j++)
+        {
+            enemy.GetComponent<BattleEnemy>().enemy.behaviours[j].character = enemy.GetComponent<BattleEnemy>().enemy;
+        }
+        enemy.GetComponent<BattleEnemy>().hpBar = snakeSlider;
+        enemy.GetComponent<BattleEnemy>().BuffParent = snakeSlider.transform.GetChild(2);
+        enemy.GetComponent<BattleEnemy>().MakeBuff();
+        characters.Add(enemy.GetComponent<BattleEnemy>().enemy);
+        enemys.Add(enemy);
+        GameManager.Instance.enemies.Clear();
         yield return null;
-        AfterShow();
     }
 
     IEnumerator manFade()
@@ -420,7 +435,7 @@ public class BattleManager : MonoBehaviour
                     characters[i].nextBuffs.Clear();
                     enemys[i].GetComponent<BattleEnemy>().MakeBuff();
                 }
-
+                turn += 1;
                 State = BattleState.EnemyTurnEnd;
             }
         }
@@ -447,5 +462,17 @@ public class BattleManager : MonoBehaviour
     {
         GameManager.Instance.player.behaviours.Add(GameManager.Instance.Reward);
         SceneManager.LoadScene("MainScene");
+    }
+    public GameObject dragon;
+    public void DragonPower()
+    {
+        dragon.SetActive(true);
+        StartCoroutine(EndDragon());
+    }
+
+    IEnumerator EndDragon()
+    {
+        yield return new WaitForSeconds(0.25f);
+        gameOver.SetActive(true);
     }
 }

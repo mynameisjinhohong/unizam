@@ -28,7 +28,7 @@ public class SnakeAttack : Behaviour
         {
             BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[8];
             BattleManager.instance.audioPlay.Play();
-            target[0].hp -= 9999;
+            BattleManager.instance.DragonPower();
         }
         else
         {

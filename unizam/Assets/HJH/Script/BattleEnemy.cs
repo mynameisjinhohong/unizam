@@ -39,7 +39,10 @@ public class BattleEnemy : MonoBehaviour
             {
                 EnemyDie();
             }
-            hpBar.transform.position = Camera.main.WorldToScreenPoint(hpPos.position);
+            if(hpPos!= null)
+            {
+                hpBar.transform.position = Camera.main.WorldToScreenPoint(hpPos.position);
+            }
         }
     }
 
