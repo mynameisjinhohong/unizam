@@ -4612,7 +4612,7 @@ PrefabInstance:
     - target: {fileID: -8254377698824839353, guid: a2fc1ae97a48a5c49965942d63716f9c, type: 3}
       propertyPath: reward
       value: 
-      objectReference: {fileID: 11400000, guid: 0caa77f35f391464d9567cf7a2a3d0d2, type: 2}
+      objectReference: {fileID: 11400000, guid: 5dc97d8731467f846ba97f8da513ed90, type: 2}
     - target: {fileID: -8254377698824839353, guid: a2fc1ae97a48a5c49965942d63716f9c, type: 3}
       propertyPath: monster
       value: 1
