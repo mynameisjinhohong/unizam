@@ -314,13 +314,14 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator EnemyMove(int idx)
     {
-        //적 애니메이션 연출
-        yield return null;
         int ran = Random.Range(0, characters[enemyIdx].behaviours.Count);
         Character[] ch = new Character[1];
         ch[0] = GameManager.Instance.player;
         int nowHp = GameManager.Instance.player.hp;
         characters[enemyIdx].behaviours[ran].Do(ch);
+        //적 애니메이션 연출
+        
+        yield return null;
         beforeDamage += nowHp - GameManager.Instance.player.hp;
         if(GameManager.Instance.player.hp < 0)
         {

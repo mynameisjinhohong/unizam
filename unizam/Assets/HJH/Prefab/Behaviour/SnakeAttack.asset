@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946d4b99af9f693468b7df3188ed2ad0, type: 3}
+  m_Name: SnakeAttack
+  m_EditorClassIdentifier: 
+  state: 0
+  character:
+    hp: 80
+    buffs: []
+    nextBuffs: []
+    behaviours:
+    - {fileID: 11400000}
+  all: 0
+  behaviourName: 
+  turn: 0
+  nomalPercent: 30
+  MinDamage: 8
+  MaxDamage: 12
+  fireDamage: 20
+  buff: {fileID: 11400000, guid: 6610aec54c4055745a373bc411fb17aa, type: 2}
+  skillName:
+  - "\uD654\uC5FC\uC758 \uC624\uC624\uB77C"
+  - "\uC6A9\uC758 \uC77C\uACA9"
+  - "\uC2B9\uCC9C"
