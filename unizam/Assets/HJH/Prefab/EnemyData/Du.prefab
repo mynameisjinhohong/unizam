@@ -110,6 +110,8 @@ MonoBehaviour:
   maxHp: 0
   hpBar: {fileID: 0}
   BuffParent: {fileID: 0}
+  HPCan: {fileID: 0}
+  HpCanImage: {fileID: 3428233593567847835, guid: 4730253a7e6554f419fe92db741107aa, type: 3}
 --- !u!61 &4120892675327551888
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -145,7 +147,7 @@ BoxCollider2D:
   m_Offset: {x: 0.04052353, y: 5.2015433}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 6.2620587, y: 10.07}
     newSize: {x: 6.2620587, y: 10.07}
     adaptiveTilingThreshold: 0.5

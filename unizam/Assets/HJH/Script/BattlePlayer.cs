@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,10 +9,16 @@ public class BattlePlayer : MonoBehaviour
     public GameObject[] mp;
     public Slider hpBar;
     public Transform BuffParent;
+    public Transform HPCan;
+    public GameObject HpCanImage;
     // Start is called before the first frame update
     void Start()
     {
-        
+        HPCan = hpBar.transform.GetChild(3);
+        for (int i = 0; i < GameManager.Instance.player.hp / 3; i++)
+        {
+            Instantiate(HpCanImage, HPCan);
+        }
     }
 
     // Update is called once per frame

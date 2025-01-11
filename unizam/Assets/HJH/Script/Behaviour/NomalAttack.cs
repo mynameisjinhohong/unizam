@@ -7,6 +7,11 @@ public class NomalAttack : Behaviour
     public int MinDamage;
     public override void Do(Character[] target)
     {
+        Animator ani;
+        if(unit.TryGetComponent<Animator>(out ani))
+        {
+            ani.SetTrigger("Attack");
+        }
         int damage = Random.Range(MinDamage, MaxDamage);
         for(int i = 0; i < character.buffs.Count; i++)
         {
