@@ -6420,6 +6420,7 @@ GameObject:
   - component: {fileID: 1682007660}
   - component: {fileID: 1682007662}
   - component: {fileID: 1682007661}
+  - component: {fileID: 1682007663}
   m_Layer: 5
   m_Name: mangTae
   m_TagString: Untagged
@@ -6466,7 +6467,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 13c722e23537bde4b82eaf4fc58f1eb6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5dc68c80bd7abce47bac0e462a2c9b37, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6484,6 +6485,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682007659}
   m_CullTransparentMesh: 1
+--- !u!114 &1682007663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682007659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05ef4b0ef470fe4fa606deec396bc5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mangTaePics:
+  - {fileID: 21300000, guid: 5dc68c80bd7abce47bac0e462a2c9b37, type: 3}
+  - {fileID: 21300000, guid: db06143ed5888f947bc9f6660101e990, type: 3}
+  - {fileID: 21300000, guid: bb9103abc0a52a549903cff760284df6, type: 3}
+  - {fileID: 21300000, guid: f3722f9f4e3af0e4e9f529350926be23, type: 3}
+  currentPic: {fileID: 1682007661}
+  changeInterval: 0.1
 --- !u!1 &1722194295
 GameObject:
   m_ObjectHideFlags: 0
