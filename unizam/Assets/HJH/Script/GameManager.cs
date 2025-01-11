@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     public int maxMp;
     public PlayerCharacter player;
 
+    // 클리어한 적들 목록
+    public List<bool> isClear = new List<bool>();
+
     // 종료창 UI
     public GameObject quitUI;
     public Image fadeImage;

@@ -26,7 +26,10 @@ public class Encounter : MonoBehaviour
     public Image fadeImage; // 페이드 효과 이미지
     public List<Sprite> changeImages; // 변경할 스프라이트 목록
 
+    public int clearIndex;
+
     public AudioClip encounterAudio;
+    public AudioClip hintaudioAudio;
     //1 - 두억 등장, 2- 구미호 등장, 3- 이무기 등장
     public AudioSource audioPlay;
 
@@ -40,16 +43,19 @@ public class Encounter : MonoBehaviour
             switch (monster)
             {
                 case monster.du:
-                    StartCoroutine(duFade());
+                    if (GameManager.Instance.isClear[1] == false)
+                        StartCoroutine(duFade());
                     break;
                 case monster.gu:
-                    StartCoroutine(guFade());
+                    if (GameManager.Instance.isClear[2] == false)
+                        StartCoroutine(guFade());
                     break;
                 case monster.snake:
                     StartCoroutine(snakeFade());
                     break;
                 case monster.man:
-                    StartCoroutine(manFade());
+                    if (GameManager.Instance.isClear[0] == false)
+                        StartCoroutine(manFade());
                     break;
             }
         }
@@ -71,12 +77,18 @@ public class Encounter : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         Debug.Log("나감");
+        if (GameManager.Instance.isClear[clearIndex] == false)
+        {
+            audioPlay.clip = hintaudioAudio;
+            audioPlay.Play();
+        }
         isVisit = false;
     }
 
     // du ///////////////////////////////////////////////
     IEnumerator duFade()
     {
+        GameManager.Instance.isClear[1] = true;
         float fadeCount = 0;
         while (fadeCount < 1.0f)
         {
@@ -200,6 +212,7 @@ public class Encounter : MonoBehaviour
     IEnumerator manFade()
     {
         Transform monster = fadeImage.transform.Find("jumpScare");
+        GameManager.Instance.isClear[0] = true;
 
         if (monster != null)
         {
@@ -228,6 +241,7 @@ public class Encounter : MonoBehaviour
 
     IEnumerator guFade()
     {
+        GameManager.Instance.isClear[2] = true;
         Transform monster = fadeImage.transform.Find("gumiho");
 
         if (monster != null)

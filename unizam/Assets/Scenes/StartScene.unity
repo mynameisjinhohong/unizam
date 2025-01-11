@@ -1510,6 +1510,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: cfdfc3361362fab4caaa31cdf3e30adf, type: 2}
     - {fileID: 11400000, guid: 53044b1ce9c208342a97b22f864bb9d8, type: 2}
     mp: 0
+  isClear: 000000
   quitUI: {fileID: 2007375686}
   fadeImage: {fileID: 533772461}
   canvas: {fileID: 322158604}

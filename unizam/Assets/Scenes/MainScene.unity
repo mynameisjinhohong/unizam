@@ -864,6 +864,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 970777083}
     - target: {fileID: -8254377698824839353, guid: a2fc1ae97a48a5c49965942d63716f9c, type: 3}
+      propertyPath: hintaudioAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: caeb58cde0bd6bb41a8625ab37ae7ca3, type: 3}
+    - target: {fileID: -8254377698824839353, guid: a2fc1ae97a48a5c49965942d63716f9c, type: 3}
       propertyPath: enemy.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1937,9 +1941,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 970777083}
     - target: {fileID: -8254377698824839353, guid: a2fc1ae97a48a5c49965942d63716f9c, type: 3}
+      propertyPath: clearIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8254377698824839353, guid: a2fc1ae97a48a5c49965942d63716f9c, type: 3}
       propertyPath: encounterAudio
       value: 
       objectReference: {fileID: 8300000, guid: a619df77438d92c41b9908705acf21c6, type: 3}
+    - target: {fileID: -8254377698824839353, guid: a2fc1ae97a48a5c49965942d63716f9c, type: 3}
+      propertyPath: hintaudioAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: caeb58cde0bd6bb41a8625ab37ae7ca3, type: 3}
     - target: {fileID: -8254377698824839353, guid: a2fc1ae97a48a5c49965942d63716f9c, type: 3}
       propertyPath: enemy.Array.size
       value: 3
@@ -4214,6 +4226,7 @@ MonoBehaviour:
     nextBuffs: []
     behaviours: []
     mp: 0
+  isClear: 000000
   quitUI: {fileID: 1735420332}
   fadeImage: {fileID: 778851270}
   canvas: {fileID: 125531559}
@@ -4612,9 +4625,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 970777083}
     - target: {fileID: -8254377698824839353, guid: a2fc1ae97a48a5c49965942d63716f9c, type: 3}
+      propertyPath: clearIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8254377698824839353, guid: a2fc1ae97a48a5c49965942d63716f9c, type: 3}
       propertyPath: encounterAudio
       value: 
       objectReference: {fileID: 8300000, guid: 0cf64ecf0373d3e4e8bc3feb1ea02641, type: 3}
+    - target: {fileID: -8254377698824839353, guid: a2fc1ae97a48a5c49965942d63716f9c, type: 3}
+      propertyPath: hintaudioAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: caeb58cde0bd6bb41a8625ab37ae7ca3, type: 3}
     - target: {fileID: -8254377698824839353, guid: a2fc1ae97a48a5c49965942d63716f9c, type: 3}
       propertyPath: enemy.Array.size
       value: 1
