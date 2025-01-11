@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Properties;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,6 +15,8 @@ public enum monster
 
 public class Encounter : MonoBehaviour
 {
+    public bool isVisit = false;
+
     public List<EnemeyData> enemy;
     public bool boss;
     public Sprite bg;
@@ -30,29 +33,41 @@ public class Encounter : MonoBehaviour
 
     void Update()
     {
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
+        if (isVisit == true && Input.GetKeyDown(KeyCode.Space)) {
             switch (monster)
             {
                 case monster.du:
-                    StartCoroutine(Fade());
+                    StartCoroutine(duFade());
                     break;
                 case monster.gu:
                     break;
                 case monster.snake:
                     break;
-                case monster.man: 
+                case monster.man:
+                    StartCoroutine(manFade());
                     break;
             }
-
         }
     }
 
-    IEnumerator Fade()
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Debug.Log("방문");
+            isVisit = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("나감");
+        isVisit = false;
+    }
+
+    // du ///////////////////////////////////////////////
+    IEnumerator duFade()
     {
         float fadeCount = 0;
         while (fadeCount < 1.0f)
@@ -93,15 +108,15 @@ public class Encounter : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
 
         // 원래 위치로 올림
-        yield return StartCoroutine(MoveUp(monster));
+        //yield return StartCoroutine(MoveUp(monster));
 
         // 1초 대기
-        yield return new WaitForSeconds(1.0f);
+        //yield return new WaitForSeconds(0.3f);
 
         // 다시 아래로 내림
-        yield return StartCoroutine(MoveDown(monster));
+        //yield return StartCoroutine(MoveDown(monster));
 
-        yield return new WaitForSeconds(1.0f);
+        //yield return new WaitForSeconds(0.3f);
 
         // Y값 설정 완료 후 색상 변경 시작
         Image monsterImage = monster.GetComponent<Image>();
@@ -142,8 +157,8 @@ public class Encounter : MonoBehaviour
     IEnumerator MoveUp(Transform monster)
     {
         float startY = -721.0f; // 원래 위치
-        float moveGap = 30f; // 이동 거리 (1프레임당 이동할 값) - 더 빠르게 이동
-        float waitTime = 0.015f; // 이동 간격 (초)
+        float moveGap = 50f; // 이동 거리 (1프레임당 이동할 값)
+        float waitTime = 0.04f; // 이동 간격 (초)
 
         Vector3 currentPos = monster.position;
 
@@ -166,13 +181,45 @@ public class Encounter : MonoBehaviour
         currentPos.y = startY;
         monster.position = currentPos;
     }
+    //////////////////////////
+
+    // man ///////////////////////////////////////////////
+
+    IEnumerator manFade()
+    {
+        Transform monster = fadeImage.transform.Find("jumpScare");
+
+        if (monster != null)
+        {
+            monster.gameObject.SetActive(true);
+
+            yield return new WaitForSeconds(1.0f);
+
+            // Image 컴포넌트 가져오기
+            Image monsterImage = monster.GetComponent<Image>();
+            if (monsterImage != null)
+            {
+                // 색상 변경 시작
+                yield return StartCoroutine(FadeToBlack(monsterImage));
+            }
+        }
+
+        yield return new WaitForSeconds(0.5f);
+    }
+
+
+
+
+    //////////////////////////
+
+
 
     IEnumerator FadeToBlack(Image monsterImage)
     {
         Color initialColor = monsterImage.color;
         Color targetColor = Color.black; // 검은색으로 변경
 
-        float transitionTime = 2.0f; // 색상 전환 시간
+        float transitionTime = 1.0f; // 색상 전환 시간
         float elapsedTime = 0f;
 
         while (elapsedTime < transitionTime)
@@ -184,7 +231,7 @@ public class Encounter : MonoBehaviour
 
         monsterImage.color = targetColor;
 
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.3f);
         MoveScnene();
 
     }
@@ -202,4 +249,5 @@ public class Encounter : MonoBehaviour
         SceneManager.LoadScene("BattleScene");
 
     }
+
 }
