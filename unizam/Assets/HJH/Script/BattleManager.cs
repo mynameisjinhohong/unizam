@@ -108,6 +108,10 @@ public class BattleManager : MonoBehaviour
     //0 - 망태 등장, 1 - 베기, 2- 선풍 스킬, 3- 망태스킬, 4- 두억스킬, 5- 구미호스킬, 6- 몬스터평타, 7 - 이무기오오라, 8 - 이무기 승천, 9 - 이무기공격, 10 - 몬스터 죽을때
     public AudioSource audioPlay;
 
+
+    public Button restart;
+    public Button quit;
+
     private void Start()
     {
         for(int i =0; i < GameManager.Instance.player.behaviours.Count; i++)

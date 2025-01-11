@@ -3951,6 +3951,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f28e728a0e65c044d9be0ffcc4f166e8, type: 3}
   - {fileID: 8300000, guid: 48e53951d20a02c4dab551dcf33b0f64, type: 3}
   audioPlay: {fileID: 906518449}
+  restart: {fileID: 574345332}
+  quit: {fileID: 1119170438}
   snakeSlider: {fileID: 0}
   dragon: {fileID: 0}
 --- !u!4 &906518448

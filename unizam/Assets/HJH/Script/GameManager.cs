@@ -148,6 +148,10 @@ public class GameManager : MonoBehaviour
             canvas.SetActive(false);
             GameObject.Find("Player").transform.position = playerPos;
         }
+        else if (scene.name == "BattleScene") {
+            BattleManager.instance.restart.onClick.AddListener(() => Quit());
+            BattleManager.instance.quit.onClick.AddListener(() => Quit2());
+        }
     }
 
     private void OnDestroy()
