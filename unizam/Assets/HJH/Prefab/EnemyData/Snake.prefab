@@ -196,6 +196,8 @@ MonoBehaviour:
   BuffParent: {fileID: 0}
   HPCan: {fileID: 0}
   HpCanImage: {fileID: 0}
+  dieEffect1: {fileID: 0}
+  dieEffect2: {fileID: 0}
 --- !u!61 &4120892675327551888
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -228,7 +230,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.929563, y: -0.0071849823}
+  m_Offset: {x: 3.6122625, y: -0.0071849823}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -239,7 +241,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 15.309159, y: 11.128769}
+  m_Size: {x: 11.94376, y: 11.128769}
   m_EdgeRadius: 0
 --- !u!95 &-3252126599226368905
 Animator:
