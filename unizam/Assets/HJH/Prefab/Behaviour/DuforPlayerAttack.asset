@@ -22,3 +22,4 @@ MonoBehaviour:
   unit: {fileID: 0}
   all: 0
   behaviourName: 
+  effect: {fileID: 54719681773886059, guid: 6d0e08a4734d53646948e62eb647400e, type: 3}
