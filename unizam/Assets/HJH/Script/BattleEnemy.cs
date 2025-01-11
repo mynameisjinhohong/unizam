@@ -13,6 +13,7 @@ public class BattleEnemy : MonoBehaviour
     public Transform HPCan;
     public GameObject HpCanImage;
     bool start;
+    public bool destroy = false;
     public GameObject dieEffect1;
     public GameObject dieEffect2;
     // Start is called before the first frame update
@@ -86,5 +87,11 @@ public class BattleEnemy : MonoBehaviour
         dieEffect1.SetActive(true);
         yield return new WaitForSeconds(0.35f);
         dieEffect2.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        if (destroy)
+        {
+            hpBar.gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
     }
 }
