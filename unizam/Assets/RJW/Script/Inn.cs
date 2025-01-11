@@ -58,7 +58,9 @@ public class Inn : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        innUI.SetActive(false);
-        enter = false;
+        if (innUI != null) {
+            innUI.SetActive(false);
+            enter = false;
+        }
     }
 }
