@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (inputVec.x != 0)
+        if (inputVec.x != 0 && GameManager.Instance.moveAble == true)
         {
             spriter.flipX = inputVec.x < 0;
         }
