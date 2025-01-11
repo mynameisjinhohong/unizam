@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inn : MonoBehaviour
 {
     bool spendNight = false;
+    bool enter = false;
+    public int heal;
 
     public GameObject innUI;
     // Start is called before the first frame update
@@ -16,7 +19,9 @@ public class Inn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (enter && Input.GetKeyDown(KeyCode.Space)) {
+            innUI.SetActive(true);
+        }
     }
 
     public void randomEvent() {
@@ -27,7 +32,8 @@ public class Inn : MonoBehaviour
             if (GameManager.Instance.player.mp >= 1)
             {
                 GameManager.Instance.player.mp -= 1;
-                GameManager.Instance.player.hp += 20;
+                GameManager.Instance.player.hp += heal;
+
                 Debug.Log("편히 쉴 수 있었다.");
                 spendNight = true;
             }
@@ -46,12 +52,13 @@ public class Inn : MonoBehaviour
     {
         if (collision.CompareTag("Player") && spendNight == false)
         {
-            innUI.SetActive(true);
+            enter = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         innUI.SetActive(false);
+        enter = false;
     }
 }

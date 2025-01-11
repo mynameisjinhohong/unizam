@@ -438,7 +438,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 950240733}
-  startButton: {fileID: 111376968}
 --- !u!1 &237936975
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,11 +741,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a994062542e8abc4b91d46d3b70350d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
+  enemies:
+  - {fileID: 11400000, guid: 16a975aa8e3fed243b3fdc457b3f4163, type: 2}
+  maxHp: 50
+  maxMp: 6
   player:
     hp: 0
     mp: 0
-    behaviours: []
+    behaviours:
+    - {fileID: 11400000, guid: 510dded60cb083641828a94d472cce35, type: 2}
 --- !u!4 &1316138249
 Transform:
   m_ObjectHideFlags: 0
