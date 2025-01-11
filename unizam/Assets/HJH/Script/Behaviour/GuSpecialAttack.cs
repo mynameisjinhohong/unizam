@@ -9,6 +9,8 @@ public class GuSpecialAttack : Behaviour
     public int minDamage;
     public override void Do(Character[] target)
     {
+        BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[5];
+        BattleManager.instance.audioPlay.Play();
         for (int i = 0; i < target.Length; i++)
         {
             int damage = Random.Range(minDamage, maxDamage);
@@ -23,6 +25,5 @@ public class GuSpecialAttack : Behaviour
             target[i].hp -= damage;
             character.hp += damage / 2;
         }
-        base.Do(target);
     }
 }

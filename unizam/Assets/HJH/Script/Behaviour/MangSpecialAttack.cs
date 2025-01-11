@@ -10,6 +10,8 @@ public class MangSpecialAttack : Behaviour
     public int minDamage;
     public override void Do(Character[] target)
     {
+        BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[3];
+        BattleManager.instance.audioPlay.Play();
         for (int i = 0; i < target.Length; i++)
         {
             int damage = Random.Range(minDamage, maxDamage);

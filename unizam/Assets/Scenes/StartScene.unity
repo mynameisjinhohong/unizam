@@ -1496,8 +1496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a994062542e8abc4b91d46d3b70350d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 11400000, guid: 16a975aa8e3fed243b3fdc457b3f4163, type: 2}
+  enemies: []
   Reward: {fileID: 0}
   monster: 0
   bg: {fileID: 0}
@@ -1508,7 +1507,8 @@ MonoBehaviour:
     buffs: []
     nextBuffs: []
     behaviours:
-    - {fileID: 11400000, guid: 510dded60cb083641828a94d472cce35, type: 2}
+    - {fileID: 11400000, guid: cfdfc3361362fab4caaa31cdf3e30adf, type: 2}
+    - {fileID: 11400000, guid: 53044b1ce9c208342a97b22f864bb9d8, type: 2}
     mp: 0
   quitUI: {fileID: 2007375686}
   fadeImage: {fileID: 533772461}

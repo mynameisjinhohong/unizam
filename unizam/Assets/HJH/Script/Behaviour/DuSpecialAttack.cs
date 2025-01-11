@@ -21,6 +21,8 @@ public class DuSpecialAttack : Behaviour
         }
         else
         {
+            BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[4];
+            BattleManager.instance.audioPlay.Play();
             for (int i = 0; i < target.Length; i++)
             {
                 int damage = (duData.enemy.hp -character.hp)*5;

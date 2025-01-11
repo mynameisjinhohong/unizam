@@ -26,14 +26,17 @@ public class SnakeAttack : Behaviour
         turn += 1;
         if(turn >= 8)
         {
+            BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[8];
+            BattleManager.instance.audioPlay.Play();
             target[0].hp -= 9999;
         }
         else
         {
             if (fire)
             {
+                BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[9];
+                BattleManager.instance.audioPlay.Play();
                 int damage = Random.Range(fireDamage - 2, fireDamage + 3);
-                Debug.Log(damage);
                 for (int i = 0; i < character.buffs.Count; i++)
                 {
                     damage = character.buffs[i].BuffEffect(true, damage);
@@ -42,12 +45,13 @@ public class SnakeAttack : Behaviour
                 {
                     damage = target[0].buffs[k].BuffEffect(false, damage);
                 }
-                Debug.Log(damage);
                 target[0].hp -= damage;
                 fire = false;
             }
             else
             {
+                BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[6];
+                BattleManager.instance.audioPlay.Play();
                 Debug.Log("기본공격");
                 if (ran < nomalPercent)
                 {
@@ -64,6 +68,8 @@ public class SnakeAttack : Behaviour
                 }
                 else
                 {
+                    BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[7];
+                    BattleManager.instance.audioPlay.Play();
                     fire = true;
                     character.nextBuffs.Add(buff);
                 }

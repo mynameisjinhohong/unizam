@@ -101,12 +101,22 @@ public class BattleManager : MonoBehaviour
 
     public SpriteRenderer bg;
 
+    public Transform mantae;
+
+    public AudioClip[] audios;
+    //0 - 망태 등장, 1 - 베기, 2- 선풍 스킬, 3- 망태스킬, 4- 두억스킬, 5- 구미호스킬, 6- 몬스터평타, 7 - 이무기오오라, 8 - 이무기 승천, 9 - 이무기공격
+    public AudioSource audioPlay;
+
     private void Start()
     {
+        //bg.sprite = GameManager.Instance.bg;
         switch (GameManager.Instance.monster)
         {
             case monster.man:
-
+                StartCoroutine(manFade());
+                break;
+            case monster.snake:
+                StartCoroutine(SnakeFade());
                 break;
             default:
                 AfterShow();
@@ -115,9 +125,41 @@ public class BattleManager : MonoBehaviour
         
     }
 
+    IEnumerator SnakeFade()
+    {
+        audioPlay.clip = audios[8];
+        audioPlay.Play();
+        yield return null;
+        AfterShow();
+    }
+
+    IEnumerator manFade()
+    {
+        yield return new WaitForSeconds(1f);
+        if (mantae != null)
+        {
+            mantae.gameObject.SetActive(true);
+            audioPlay.clip = audios[0];
+            audioPlay.Play();
+            yield return new WaitForSeconds(1.0f);
+
+            // Image 컴포넌트 가져오기
+            Image monsterImage = mantae.GetComponent<Image>();
+            if (monsterImage != null)
+            {
+                // 색상 변경 시작
+                //yield return StartCoroutine(FadeToBlack(monsterImage));
+            }
+        }
+
+        yield return new WaitForSeconds(0.5f);
+        mantae.gameObject.SetActive(false);
+        AfterShow();
+    }
+
     public void AfterShow()
     {
-        //bg.sprite = GameManager.Instance.bg;
+
         State = BattleState.StartDice;
         characters = new List<EnemyCharacter>();
         enemys = new List<GameObject>();
@@ -211,7 +253,6 @@ public class BattleManager : MonoBehaviour
                     }
                 }
             }
-
         }
     }
 
@@ -253,7 +294,14 @@ public class BattleManager : MonoBehaviour
     public void UseSkill()
     {
         //스킬 사용 연출
+        StartCoroutine(Skill());
+    }
 
+    IEnumerator Skill()
+    {
+        audioPlay.clip = audios[diceSu + 1];
+        audioPlay.Play();
+        yield return null;
         EndSkillEffect();
     }
 
