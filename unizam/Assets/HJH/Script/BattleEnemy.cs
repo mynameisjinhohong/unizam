@@ -32,9 +32,12 @@ public class BattleEnemy : MonoBehaviour
                     enemy.behaviours[i].character = enemy;
                 }
                 HPCan = hpBar.transform.GetChild(3);
-                for(int i =0; i< enemy.hp/3; i++)
+                if(HpCanImage != null)
                 {
-                    Instantiate(HpCanImage, HPCan);
+                    for (int i = 0; i < enemy.hp / 3; i++)
+                    {
+                        Instantiate(HpCanImage, HPCan);
+                    }
                 }
                 start= false;
             }
