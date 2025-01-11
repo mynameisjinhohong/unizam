@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class StartGame : MonoBehaviour
 {
     public RawImage fadeImage;
+    public List<Button> buttonList;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,22 @@ public class StartGame : MonoBehaviour
 
     public void GameStart()
     {
-        gameObject.transform.localScale = Vector3.zero;
+        buttonList[0].gameObject.transform.localScale = Vector3.zero;
+        buttonList[1].gameObject.transform.localScale = Vector3.zero;
         StartCoroutine(Fade());
+    }
+
+    public void GameQuit()
+    {
+        buttonList[0].gameObject.transform.localScale = Vector3.zero;
+        buttonList[1].gameObject.transform.localScale = Vector3.zero;
+
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                Application.Quit(); 
+        #endif
+
     }
 
     IEnumerator Fade()

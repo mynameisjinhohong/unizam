@@ -9,16 +9,12 @@ public class Encounter : MonoBehaviour
     public Image fadeImage; // 페이드 효과 이미지
     public List<Sprite> changeImages; // 변경할 스프라이트 목록
 
-    // Start is called before the first frame update
     void Start()
     {
-
     }
 
-    // Update is called once per frame
     void Update()
     {
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,37 +40,55 @@ public class Encounter : MonoBehaviour
         {
             monster.gameObject.SetActive(true);
 
-            Image monsterImage = monster.GetComponent<Image>(); // Image 컴포넌트 가져오기
+            Image monsterImage = monster.GetComponent<Image>();
             if (monsterImage != null && changeImages.Count > 0)
             {
-                // changeImages 목록의 스프라이트들로 순차적으로 변경
-                //StartCoroutine(ChangeMonsterImages(monsterImage));
                 foreach (Sprite sprite in changeImages)
                 {
-                    monsterImage.sprite = sprite; // Image 컴포넌트의 스프라이트 변경
-                    yield return new WaitForSeconds(0.5f); // 0.5초 대기
+                    monsterImage.sprite = sprite;
+                    yield return new WaitForSeconds(0.5f);
                 }
             }
         }
 
         yield return new WaitForSeconds(0.5f);
-        StartCoroutine(MoveMonster(monster));
+        StartCoroutine(MoveSequence(monster));
     }
 
-    IEnumerator ChangeMonsterImages(Image monsterImage)
+    IEnumerator MoveSequence(Transform monster)
     {
-        foreach (Sprite sprite in changeImages)
+        if (monster == null) yield break;
+
+        // 아래로 내림
+        yield return StartCoroutine(MoveDown(monster));
+
+        // 1초 대기
+        yield return new WaitForSeconds(1.0f);
+
+        // 원래 위치로 올림
+        yield return StartCoroutine(MoveUp(monster));
+
+        // 1초 대기
+        yield return new WaitForSeconds(1.0f);
+
+        // 다시 아래로 내림
+        yield return StartCoroutine(MoveDown(monster));
+
+        yield return new WaitForSeconds(1.0f);
+
+        // Y값 설정 완료 후 색상 변경 시작
+        Image monsterImage = monster.GetComponent<Image>();
+        if (monsterImage != null)
         {
-            monsterImage.sprite = sprite; // Image 컴포넌트의 스프라이트 변경
-            yield return new WaitForSeconds(1.0f); // 0.5초 대기
+            yield return StartCoroutine(FadeToBlack(monsterImage));
         }
     }
 
-    IEnumerator MoveMonster(Transform monster)
+    IEnumerator MoveDown(Transform monster)
     {
         float endY = -6920f; // 목표 y 값
-        float moveGap = 50f; // 이동 거리 (1프레임당 이동할 값)
-        float waitTime = 0.04f; // 이동 간격 (초)
+        float moveGap = 30f; // 이동 거리 (1프레임당 이동할 값) - 더 빠르게 이동
+        float waitTime = 0.015f; // 이동 간격 (초)
 
         Vector3 currentPos = monster.position;
 
@@ -91,18 +105,59 @@ public class Encounter : MonoBehaviour
 
             monster.position = currentPos;
 
-            // 이동 간격 기다리기
             yield return new WaitForSeconds(waitTime);
         }
 
-        // 정확히 목표 y 값으로 설정
         currentPos.y = endY;
         monster.position = currentPos;
+    }
 
-        // 2초 대기 후 씬 전환
-        yield return new WaitForSeconds(2.0f);
+    IEnumerator MoveUp(Transform monster)
+    {
+        float startY = -721.0f; // 원래 위치
+        float moveGap = 30f; // 이동 거리 (1프레임당 이동할 값) - 더 빠르게 이동
+        float waitTime = 0.015f; // 이동 간격 (초)
 
+        Vector3 currentPos = monster.position;
 
+        // 원래 위치로 돌아갈 때까지 이동
+        while (currentPos.y < startY)
+        {
+            currentPos.y += moveGap;
+
+            // 원래 위치를 초과하지 않도록 제한
+            if (currentPos.y > startY)
+            {
+                currentPos.y = startY;
+            }
+
+            monster.position = currentPos;
+
+            yield return new WaitForSeconds(waitTime);
+        }
+
+        currentPos.y = startY;
+        monster.position = currentPos;
+    }
+
+    IEnumerator FadeToBlack(Image monsterImage)
+    {
+        Color initialColor = monsterImage.color;
+        Color targetColor = Color.black; // 검은색으로 변경
+
+        float transitionTime = 2.0f; // 색상 전환 시간
+        float elapsedTime = 0f;
+
+        while (elapsedTime < transitionTime)
+        {
+            elapsedTime += Time.deltaTime;
+            monsterImage.color = Color.Lerp(initialColor, targetColor, elapsedTime / transitionTime);
+            yield return null;
+        }
+
+        monsterImage.color = targetColor;
+
+        yield return new WaitForSeconds(1.0f);
 
         SceneManager.LoadScene("BattleScene");
     }
