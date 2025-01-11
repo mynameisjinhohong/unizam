@@ -435,7 +435,7 @@ public class BattleManager : MonoBehaviour
         }
         else
         {
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.01f);
         }
         //적 애니메이션 연출
         beforeDamage += nowHp - GameManager.Instance.player.hp;

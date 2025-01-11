@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour
         else if (scene.name == "MainScene")
         {
             canvas.SetActive(false);
-            GameObject.Find("Player").transform.position = playerPos;
+            GameObject.Find("Player").transform.localPosition = playerPos;
         }
         else if (scene.name == "BattleScene") {
             BattleManager.instance.restart.onClick.AddListener(() => Quit());
