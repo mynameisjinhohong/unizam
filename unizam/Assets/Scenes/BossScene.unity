@@ -2147,7 +2147,7 @@ Transform:
   m_GameObject: {fileID: 865981208}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.83, y: 1, z: -0.011834375}
+  m_LocalPosition: {x: 7.52, y: -3.2, z: -0.011834375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2315,7 +2315,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 462f95b8bf7270d45ae2300608582cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beforeDamage: 0
   player: {fileID: 782735168}
   skillButton: {fileID: 1197713843}
   spawnPos1:
@@ -2668,7 +2667,7 @@ Transform:
   m_GameObject: {fileID: 988353809}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.96, y: -3.2, z: -0.011834375}
+  m_LocalPosition: {x: 3.62, y: -3.2, z: -0.011834375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4730,10 +4729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a994062542e8abc4b91d46d3b70350d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 11400000, guid: 11720a299d4937a438a0860d1b5a3429, type: 2}
-  - {fileID: 11400000, guid: 11720a299d4937a438a0860d1b5a3429, type: 2}
-  - {fileID: 11400000, guid: 70d6633eb56b0d84daeba73cc9f7960a, type: 2}
+  enemies: []
   Reward: {fileID: 0}
   maxHp: 50
   maxMp: 6
@@ -4744,8 +4740,6 @@ MonoBehaviour:
     behaviours:
     - {fileID: 11400000, guid: 510dded60cb083641828a94d472cce35, type: 2}
     - {fileID: 11400000, guid: 53044b1ce9c208342a97b22f864bb9d8, type: 2}
-    - {fileID: 11400000, guid: 0caa77f35f391464d9567cf7a2a3d0d2, type: 2}
-    - {fileID: 11400000, guid: 5dc97d8731467f846ba97f8da513ed90, type: 2}
     mp: 0
   quitUI: {fileID: 0}
   fadeImage: {fileID: 0}

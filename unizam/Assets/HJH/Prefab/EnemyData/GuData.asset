@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70aaf2776b2af464780be9656d1870b3, type: 3}
+  m_Name: GuData
+  m_EditorClassIdentifier: 
+  enemy:
+    hp: 40
+    buffs: []
+    nextBuffs: []
+    behaviours:
+    - {fileID: 11400000, guid: a6002adfbd2b4654ab431148c11b52c9, type: 2}
+    - {fileID: 11400000, guid: a6002adfbd2b4654ab431148c11b52c9, type: 2}
+    - {fileID: 11400000, guid: a6002adfbd2b4654ab431148c11b52c9, type: 2}
+    - {fileID: 11400000, guid: ae96e19aa6e3e6943afad8ff3b784f95, type: 2}
+    - {fileID: 11400000, guid: ae96e19aa6e3e6943afad8ff3b784f95, type: 2}
+    - {fileID: 11400000, guid: ae96e19aa6e3e6943afad8ff3b784f95, type: 2}
+    - {fileID: 11400000, guid: ae96e19aa6e3e6943afad8ff3b784f95, type: 2}
+    - {fileID: 11400000, guid: ae96e19aa6e3e6943afad8ff3b784f95, type: 2}
+    - {fileID: 11400000, guid: ae96e19aa6e3e6943afad8ff3b784f95, type: 2}
+    - {fileID: 11400000, guid: ae96e19aa6e3e6943afad8ff3b784f95, type: 2}
+    enemyPrefab: {fileID: 2418270481052393022, guid: d5f5fded602eee648b835d66aa696af3, type: 3}

@@ -9,13 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70aaf2776b2af464780be9656d1870b3, type: 3}
-  m_Name: DuData
+  m_Script: {fileID: 11500000, guid: 3891a1600dc2f3b42bb1a544601f0eba, type: 3}
+  m_Name: DuSpecialAttack
   m_EditorClassIdentifier: 
-  enemy:
-    hp: 14
+  state: 0
+  character:
+    hp: -4
     buffs: []
     nextBuffs: []
     behaviours:
-    - {fileID: 11400000, guid: 0fb21eff3e7d2be4d991124977a4f471, type: 2}
-    enemyPrefab: {fileID: 2418270481052393022, guid: b6283b8a8fd525c44820d731d7fed6f0, type: 3}
+    - {fileID: 11400000}
+  all: 0
+  behaviourName: "\uACE8\uD1B5\uBD80\uC218\uAE30"
+  duData: {fileID: 11400000, guid: 6aa9bf068bada0a4f817d6e07b6d226d, type: 2}
+  wait: 1

@@ -2,17 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DuSpecialAttack : MonoBehaviour
+[CreateAssetMenu(fileName = "DuSpecialAttack", menuName = "Scriptable Object/DuSpecialAttack")]
+public class DuSpecialAttack : Behaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public EnemeyData duData;
+    public bool wait = false;
+
+    private void OnEnable()
     {
-        
+        wait = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Do(Character[] target)
     {
-        
+        if (wait)
+        {
+            wait = false;
+        }
+        else
+        {
+            for (int i = 0; i < target.Length; i++)
+            {
+                int damage = (duData.enemy.hp -character.hp)*5;
+                for (int j = 0; j < character.buffs.Count; j++)
+                {
+                    damage = character.buffs[j].BuffEffect(true, damage);
+                }
+                for (int k = 0; k < target[i].buffs.Count; k++)
+                {
+                    damage = target[i].buffs[k].BuffEffect(false, damage);
+                }
+                target[i].hp -= damage;
+            }
+            wait = true;
+        }
     }
 }

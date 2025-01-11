@@ -8,8 +8,13 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
+    //전투씬에 전달해 줘야 하는 것
     public List<EnemeyData> enemies;
     public Behaviour Reward;
+    public bool boss;
+    public Sprite bg;
+
     public int maxHp;
     public int maxMp;
     public PlayerCharacter player;

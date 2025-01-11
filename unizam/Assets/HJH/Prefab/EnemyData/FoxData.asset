@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70aaf2776b2af464780be9656d1870b3, type: 3}
-  m_Name: DuData
+  m_Name: FoxData
   m_EditorClassIdentifier: 
   enemy:
-    hp: 14
+    hp: 15
     buffs: []
     nextBuffs: []
     behaviours:
-    - {fileID: 11400000, guid: 0fb21eff3e7d2be4d991124977a4f471, type: 2}
-    enemyPrefab: {fileID: 2418270481052393022, guid: b6283b8a8fd525c44820d731d7fed6f0, type: 3}
+    - {fileID: 11400000, guid: 53ddfcdde85a446478f602af15bfe5fe, type: 2}
+    enemyPrefab: {fileID: 2418270481052393022, guid: 0b76c78f85fb3514cb6cf8bb5251e146, type: 3}
