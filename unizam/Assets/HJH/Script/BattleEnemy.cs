@@ -10,6 +10,8 @@ public class BattleEnemy : MonoBehaviour
     public int maxHp;
     public Slider hpBar;
     public Transform BuffParent;
+    public Transform HPCan;
+    public GameObject HpCanImage;
     bool start;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,11 @@ public class BattleEnemy : MonoBehaviour
                 for(int i = 0; enemy.behaviours.Count < 0; i++)
                 {
                     enemy.behaviours[i].character = enemy;
+                }
+                HPCan = hpBar.transform.GetChild(3);
+                for(int i =0; i< enemy.hp/3; i++)
+                {
+                    Instantiate(HpCanImage, HPCan);
                 }
                 start= false;
             }

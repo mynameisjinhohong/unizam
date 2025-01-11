@@ -138,6 +138,7 @@ public class BattleManager : MonoBehaviour
         for (int j = 0; j < enemy.GetComponent<BattleEnemy>().enemy.behaviours.Count; j++)
         {
             enemy.GetComponent<BattleEnemy>().enemy.behaviours[j].character = enemy.GetComponent<BattleEnemy>().enemy;
+            enemy.GetComponent<BattleEnemy>().enemy.behaviours[j].unit = enemy;
         }
         enemy.GetComponent<BattleEnemy>().hpBar = snakeSlider;
         enemy.GetComponent<BattleEnemy>().BuffParent = snakeSlider.transform.GetChild(2);
@@ -190,6 +191,7 @@ public class BattleManager : MonoBehaviour
                     for (int j = 0; j < enemy.GetComponent<BattleEnemy>().enemy.behaviours.Count; j++)
                     {
                         enemy.GetComponent<BattleEnemy>().enemy.behaviours[j].character = enemy.GetComponent<BattleEnemy>().enemy;
+                        enemy.GetComponent<BattleEnemy>().enemy.behaviours[j].unit = enemy;
                     }
                     enemy.GetComponent<BattleEnemy>().hpBar = sliders[i];
                     enemy.GetComponent<BattleEnemy>().BuffParent = sliders[i].transform.GetChild(2);
@@ -207,6 +209,7 @@ public class BattleManager : MonoBehaviour
                     for (int j = 0; j < enemy.GetComponent<BattleEnemy>().enemy.behaviours.Count; j++)
                     {
                         enemy.GetComponent<BattleEnemy>().enemy.behaviours[j].character = enemy.GetComponent<BattleEnemy>().enemy;
+                        enemy.GetComponent<BattleEnemy>().enemy.behaviours[j].unit = enemy;
                     }
                     enemy.GetComponent<BattleEnemy>().hpBar = sliders[i];
                     enemy.GetComponent<BattleEnemy>().BuffParent = sliders[i].transform.GetChild(2);
@@ -224,6 +227,7 @@ public class BattleManager : MonoBehaviour
                     for (int j = 0; j < enemy.GetComponent<BattleEnemy>().enemy.behaviours.Count; j++)
                     {
                         enemy.GetComponent<BattleEnemy>().enemy.behaviours[j].character = enemy.GetComponent<BattleEnemy>().enemy;
+                        enemy.GetComponent<BattleEnemy>().enemy.behaviours[j].unit = enemy;
                     }
                     enemy.GetComponent<BattleEnemy>().hpBar = sliders[i];
                     enemy.GetComponent<BattleEnemy>().BuffParent = sliders[i].transform.GetChild(2);
@@ -383,9 +387,16 @@ public class BattleManager : MonoBehaviour
         }
         else
         {
-            State = BattleState.EnemyTurn;
+            StartCoroutine(EnemyTurnGo());
         }
     }
+
+    IEnumerator EnemyTurnGo()
+    {
+        yield return new WaitForSeconds(1f);
+        State = BattleState.EnemyTurn;
+    }
+
 
     public void EnemyTurn()
     {
@@ -402,7 +413,7 @@ public class BattleManager : MonoBehaviour
         characters[enemyIdx].behaviours[ran].Do(ch);
         //적 애니메이션 연출
         
-        yield return null;
+        yield return new WaitForSeconds(1.5f);
         beforeDamage += nowHp - GameManager.Instance.player.hp;
         if(GameManager.Instance.player.hp < 0)
         {

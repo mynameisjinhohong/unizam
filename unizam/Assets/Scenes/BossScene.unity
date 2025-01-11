@@ -3926,20 +3926,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aniSprites:
-  - {fileID: -1919652468, guid: c89f1fabd88b67e439daafeb62bf9742, type: 3}
-  - {fileID: -1130901795, guid: c89f1fabd88b67e439daafeb62bf9742, type: 3}
-  - {fileID: 1344677131, guid: c89f1fabd88b67e439daafeb62bf9742, type: 3}
-  - {fileID: 944651704, guid: c89f1fabd88b67e439daafeb62bf9742, type: 3}
-  - {fileID: -737333846, guid: c89f1fabd88b67e439daafeb62bf9742, type: 3}
-  - {fileID: -623395939, guid: c89f1fabd88b67e439daafeb62bf9742, type: 3}
+  - {fileID: 21300000, guid: 4cf2d54e0aad17b439400d1b5c979aa1, type: 3}
+  - {fileID: 21300000, guid: a994b5498080bed42a94bf02df0dc43b, type: 3}
+  - {fileID: 21300000, guid: 96e0827886ca35646aae63f0883f2dfb, type: 3}
+  - {fileID: 21300000, guid: afcea3a27bd2a5344b1908c8de913a01, type: 3}
+  - {fileID: 21300000, guid: 48ba9ce85c370b44db9f186048943516, type: 3}
+  - {fileID: 21300000, guid: d7b1c87e089dc0246bd4438f34b07c0a, type: 3}
   diceSprite:
-  - {fileID: -2132567371, guid: c89f1fabd88b67e439daafeb62bf9742, type: 3}
-  - {fileID: -2112176835, guid: c89f1fabd88b67e439daafeb62bf9742, type: 3}
-  - {fileID: -1341580003, guid: c89f1fabd88b67e439daafeb62bf9742, type: 3}
-  - {fileID: 595068391, guid: c89f1fabd88b67e439daafeb62bf9742, type: 3}
-  - {fileID: -1432084640, guid: c89f1fabd88b67e439daafeb62bf9742, type: 3}
-  - {fileID: -1054191443, guid: c89f1fabd88b67e439daafeb62bf9742, type: 3}
-  time: 0.1
+  - {fileID: 21300000, guid: 23ee16b4d5cfe9042a868bf503736f6f, type: 3}
+  - {fileID: 21300000, guid: 8ddd319012d378f43b67e0ccd0e1b7ab, type: 3}
+  - {fileID: 21300000, guid: 7c639797f64a8b84bb30d6c041ffa872, type: 3}
+  - {fileID: 21300000, guid: d88cc736310650d4bbf98aa685a06ae8, type: 3}
+  - {fileID: 21300000, guid: d2543816972dd5a40aaf02b53a77012d, type: 3}
+  time: 0.05
 --- !u!1 &976064198
 GameObject:
   m_ObjectHideFlags: 0
@@ -7027,7 +7026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.9607843}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
