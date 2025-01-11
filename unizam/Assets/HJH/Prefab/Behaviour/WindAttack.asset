@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88335dd65eab3694b8bf3e0880530970, type: 3}
-  m_Name: NomalAttack
+  m_Script: {fileID: 11500000, guid: 12aea894d8b4a3e4caf30a896c8c56db, type: 3}
+  m_Name: WindAttack
   m_EditorClassIdentifier: 
   state: 0
   character:
@@ -20,9 +20,10 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 806679e1504dd584ebadbb1ccdf6d3d0, type: 2}
     nextBuffs: []
     behaviours:
+    - {fileID: 11400000, guid: 510dded60cb083641828a94d472cce35, type: 2}
     - {fileID: 11400000}
-    - {fileID: 11400000, guid: 53044b1ce9c208342a97b22f864bb9d8, type: 2}
-  all: 0
-  behaviourName: "\uBCA0\uAE30"
-  MaxDamage: 7
-  MinDamage: 3
+  all: 1
+  behaviourName: "\uC120\uD48D"
+  buff: {fileID: 11400000, guid: 768c2266c4c7f3d4295c9111802b21f4, type: 2}
+  maxDamage: 5
+  minDamage: 1

@@ -14,26 +14,39 @@ public class EnemeyData : ScriptableObject
 public class Character
 {
     public int hp;
+    public List<Buff> buffs;
+    public List<Buff> nextBuffs;
+    public List<Behaviour> behaviours;
 }
 
 [System.Serializable]
 public class PlayerCharacter : Character
 {
     public int mp;
-    public List<Behaviour> behaviours;
+
 }
 
 [System.Serializable]
 public class EnemyCharacter : Character
 {
     public GameObject enemyPrefab;
-    public List<Behaviour> behaviours;
+
+}
+
+public class Buff : ScriptableObject
+{
+    public GameObject buffIcon;
+    public virtual int BuffEffect(bool myEffect,int su)
+    {
+        return su;
+    }
 }
 
 
 public class Behaviour : ScriptableObject
 {
     public BehaviourState state;
+    public Character character;
     public bool all;
     public string behaviourName;
     public virtual void Do(Character[] target)

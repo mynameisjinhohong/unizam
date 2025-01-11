@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class BattleEnemy : MonoBehaviour
 {
     public EnemyCharacter enemy;
+    public Transform hpPos;
     public int maxHp;
     public Slider hpBar;
+    public Transform BuffParent;
     bool start;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,10 @@ public class BattleEnemy : MonoBehaviour
             if(enemy != null)
             {
                 maxHp = enemy.hp;
+                for(int i = 0; enemy.behaviours.Count < 0; i++)
+                {
+                    enemy.behaviours[i].character = enemy;
+                }
                 start= false;
             }
         }
@@ -33,7 +39,19 @@ public class BattleEnemy : MonoBehaviour
             {
                 EnemyDie();
             }
-            hpBar.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position + new Vector3(0,1.5f,0));
+            hpBar.transform.position = Camera.main.WorldToScreenPoint(hpPos.position);
+        }
+    }
+
+    public void MakeBuff()
+    {
+        for(int i = BuffParent.childCount-1; i>=0; i--)
+        {
+            Destroy(BuffParent.GetChild(i).gameObject);
+        }
+        for(int i =0; i<enemy.buffs.Count; i++)
+        {
+            GameObject buff = Instantiate(enemy.buffs[i].buffIcon, BuffParent);
         }
     }
 

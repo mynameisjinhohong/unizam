@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f23d3a44ed6e654da3694227fa2b6ac, type: 3}
+  m_Name: WindBuff
+  m_EditorClassIdentifier: 
+  buffIcon: {fileID: 5555056736953779519, guid: e451cd2f78380184fb1abc1dfe0a77ff, type: 3}
+  divide: 2

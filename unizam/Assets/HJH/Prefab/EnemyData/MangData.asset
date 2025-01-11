@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70aaf2776b2af464780be9656d1870b3, type: 3}
+  m_Name: MangData
+  m_EditorClassIdentifier: 
+  enemy:
+    hp: 20
+    buffs: []
+    nextBuffs: []
+    behaviours:
+    - {fileID: 11400000, guid: 0caa77f35f391464d9567cf7a2a3d0d2, type: 2}
+    - {fileID: 11400000, guid: a6d4701e61152814b9ac59d4c523f440, type: 2}
+    - {fileID: 11400000, guid: a6d4701e61152814b9ac59d4c523f440, type: 2}
+    - {fileID: 11400000, guid: a6d4701e61152814b9ac59d4c523f440, type: 2}
+    - {fileID: 11400000, guid: a6d4701e61152814b9ac59d4c523f440, type: 2}
+    enemyPrefab: {fileID: 2418270481052393022, guid: 7d931662de4fc8c4b887c4fec4ff6816, type: 3}

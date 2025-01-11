@@ -48,7 +48,6 @@ public class DiceAni : MonoBehaviour
     {
         StopAllCoroutines();
         button.interactable = false;
-        Debug.Log("stop");
         image.sprite = diceSprite[idx];
     }
 }

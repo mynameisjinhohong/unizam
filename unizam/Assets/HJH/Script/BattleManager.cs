@@ -68,6 +68,8 @@ public class BattleManager : MonoBehaviour
 
         }
     }
+    public GameObject player;
+
     public SkillButton skillButton;
 
     public Transform[] spawnPos1;
@@ -85,6 +87,7 @@ public class BattleManager : MonoBehaviour
 
     public bool choose; //선택 턴인지
     List<EnemyCharacter> characters;//전체 적
+    List<GameObject> enemys; //전체 적 오브젝트... 바꾸기 귀찮아서 하나더 만들어버리기
     EnemyCharacter target;//플레이어가 선택한 적
     Behaviour behaviour;//플레이어의 이번턴 행동
 
@@ -95,6 +98,9 @@ public class BattleManager : MonoBehaviour
     {
         State = BattleState.StartDice;
         characters = new List<EnemyCharacter>();
+        enemys= new List<GameObject>();
+        player.GetComponent<BattlePlayer>().MakeBuff();
+
         switch (GameManager.Instance.enemies.Count)
         {
             case 1:
@@ -104,7 +110,10 @@ public class BattleManager : MonoBehaviour
                     enemy.GetComponent<BattleEnemy>().enemy.hp = GameManager.Instance.enemies[i].enemy.hp;
                     enemy.GetComponent<BattleEnemy>().enemy.behaviours = GameManager.Instance.enemies[i].enemy.behaviours;
                     enemy.GetComponent<BattleEnemy>().hpBar = sliders[i];
+                    enemy.GetComponent<BattleEnemy>().BuffParent = sliders[i].transform.GetChild(2);
+                    enemy.GetComponent<BattleEnemy>().MakeBuff();
                     characters.Add(enemy.GetComponent<BattleEnemy>().enemy);
+                    enemys.Add(enemy);
                 }
                 break;
             case 2:
@@ -114,7 +123,10 @@ public class BattleManager : MonoBehaviour
                     enemy.GetComponent<BattleEnemy>().enemy.hp = GameManager.Instance.enemies[i].enemy.hp;
                     enemy.GetComponent<BattleEnemy>().enemy.behaviours = GameManager.Instance.enemies[i].enemy.behaviours;
                     enemy.GetComponent<BattleEnemy>().hpBar = sliders[i];
+                    enemy.GetComponent<BattleEnemy>().BuffParent = sliders[i].transform.GetChild(2);
+                    enemy.GetComponent<BattleEnemy>().MakeBuff();
                     characters.Add(enemy.GetComponent<BattleEnemy>().enemy);
+                    enemys.Add(enemy);
                 }
                 break;
             case 3:
@@ -124,7 +136,10 @@ public class BattleManager : MonoBehaviour
                     enemy.GetComponent<BattleEnemy>().enemy.hp = GameManager.Instance.enemies[i].enemy.hp;
                     enemy.GetComponent<BattleEnemy>().enemy.behaviours = GameManager.Instance.enemies[i].enemy.behaviours;
                     enemy.GetComponent<BattleEnemy>().hpBar = sliders[i];
+                    enemy.GetComponent<BattleEnemy>().BuffParent = sliders[i].transform.GetChild(2);
+                    enemy.GetComponent<BattleEnemy>().MakeBuff();
                     characters.Add(enemy.GetComponent<BattleEnemy>().enemy);
+                    enemys.Add(enemy);
                 }
                 break;
         }
@@ -158,6 +173,7 @@ public class BattleManager : MonoBehaviour
                     {
                         target = hit.transform.GetComponent<BattleEnemy>().enemy;
                         State = BattleState.UseSkill;
+                        choose = false;
                     }
                 }
             }
@@ -176,6 +192,7 @@ public class BattleManager : MonoBehaviour
     {
         int ran = Random.Range(0, GameManager.Instance.player.behaviours.Count);
         behaviour = GameManager.Instance.player.behaviours[ran];
+        behaviour.character = GameManager.Instance.player;
         diceSu = ran;
         dice.Stop(diceSu);
         State = BattleState.ChooseEnemy;
@@ -184,6 +201,7 @@ public class BattleManager : MonoBehaviour
     public void ChooseSkill(int idx)
     {
         behaviour = GameManager.Instance.player.behaviours[idx];
+        behaviour.character = GameManager.Instance.player;
         diceSu = idx;
         dice.Stop(diceSu);
         skill = true;
@@ -276,6 +294,25 @@ public class BattleManager : MonoBehaviour
             }
             else
             {
+                //적 턴이 끝나고 나서 발동하는 것들
+                GameManager.Instance.player.buffs.Clear();
+                for(int i = 0; i<GameManager.Instance.player.nextBuffs.Count; i++)
+                {
+                    GameManager.Instance.player.buffs.Add(GameManager.Instance.player.nextBuffs[i]);
+                }
+                GameManager.Instance.player.nextBuffs.Clear();
+                player.GetComponent<BattlePlayer>().MakeBuff();
+                for(int i = 0; i<characters.Count; i++)
+                {
+                    characters[i].buffs.Clear();
+                    for(int j =0; j < characters[i].nextBuffs.Count; j++)
+                    {
+                        characters[i].buffs.Add(characters[i].nextBuffs[j]);
+                    }
+                    characters[i].nextBuffs.Clear();
+                    enemys[i].GetComponent<BattleEnemy>().MakeBuff();
+                }
+
                 State = BattleState.EnemyTurnEnd;
             }
         }
