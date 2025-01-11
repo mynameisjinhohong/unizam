@@ -12,13 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8949bb772e5ef41aa111f6572d1f58, type: 3}
   m_Name: MangSpecialAttack
   m_EditorClassIdentifier: 
-  mpIdx: 3
+  mpIdx: 2
   state: 0
   character:
-    hp: 0
+    hp: -3
     buffs: []
     nextBuffs: []
-    behaviours: []
+    behaviours:
+    - {fileID: 11400000}
+    - {fileID: 11400000, guid: a6d4701e61152814b9ac59d4c523f440, type: 2}
+    - {fileID: 11400000, guid: a6d4701e61152814b9ac59d4c523f440, type: 2}
+    - {fileID: 11400000, guid: a6d4701e61152814b9ac59d4c523f440, type: 2}
+    - {fileID: 11400000, guid: a6d4701e61152814b9ac59d4c523f440, type: 2}
   unit: {fileID: 0}
   all: 1
   behaviourName: "\uC6D0\uD63C\uC758 \uC6B8\uC74C\uC18C\uB9AC"
