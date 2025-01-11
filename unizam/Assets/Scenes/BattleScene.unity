@@ -200,6 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 79117973}
   - component: {fileID: 79117972}
+  - component: {fileID: 79117974}
   m_Layer: 0
   m_Name: BG_Down
   m_TagString: Untagged
@@ -274,6 +275,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &79117974
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79117971}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f76b1d8b26eb4b49841469010223fd0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &89398358
 GameObject:
   m_ObjectHideFlags: 0
@@ -7979,9 +8001,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 11400000, guid: b64965de726954f499115846bdd080f9, type: 2}
+  - {fileID: 11400000, guid: 6aa9bf068bada0a4f817d6e07b6d226d, type: 2}
   Reward: {fileID: 0}
-  monster: 0
+  monster: 1
   bg: {fileID: 0}
   maxHp: 50
   maxMp: 6

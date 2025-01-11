@@ -7,6 +7,7 @@ public class DuSpecialAttack : Behaviour
 {
     public EnemeyData duData;
     public bool wait = false;
+    public GameObject effect;
 
     private void OnEnable()
     {
@@ -23,6 +24,7 @@ public class DuSpecialAttack : Behaviour
         {
             BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[4];
             BattleManager.instance.audioPlay.Play();
+            Instantiate(effect);
             for (int i = 0; i < target.Length; i++)
             {
                 int damage = (duData.enemy.hp -character.hp)*5;
