@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97055a229be7bd04c8fc6096b29c6400, type: 3}
   m_Name: DuforPlayerAttack
   m_EditorClassIdentifier: 
+  mpIdx: 4
   state: 0
   character:
     hp: 0
     buffs: []
     nextBuffs: []
     behaviours: []
+  unit: {fileID: 0}
   all: 0
   behaviourName: 

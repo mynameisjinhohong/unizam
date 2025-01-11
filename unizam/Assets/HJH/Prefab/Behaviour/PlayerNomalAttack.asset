@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b2bb1a2aed8684d9ffedc4796e7a04, type: 3}
   m_Name: PlayerNomalAttack
   m_EditorClassIdentifier: 
+  mpIdx: 1
   state: 0
   character:
     hp: 0
     buffs: []
     nextBuffs: []
     behaviours: []
+  unit: {fileID: 0}
   all: 0
   behaviourName: "\uBCA0\uAE30"
   MaxDamage: 7

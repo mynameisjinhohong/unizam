@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88335dd65eab3694b8bf3e0880530970, type: 3}
   m_Name: GuNomalAttack
   m_EditorClassIdentifier: 
+  mpIdx: 0
   state: 1
   character:
     hp: 0
     buffs: []
     nextBuffs: []
     behaviours: []
+  unit: {fileID: 0}
   all: 0
   behaviourName: 
   MaxDamage: 5

@@ -45,6 +45,7 @@ public class Buff : ScriptableObject
 
 public class Behaviour : ScriptableObject
 {
+    public int mpIdx;
     public BehaviourState state;
     public Character character;
     public GameObject unit;

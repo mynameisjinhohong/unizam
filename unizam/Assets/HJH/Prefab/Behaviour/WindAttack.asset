@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12aea894d8b4a3e4caf30a896c8c56db, type: 3}
   m_Name: WindAttack
   m_EditorClassIdentifier: 
+  mpIdx: 2
   state: 0
   character:
     hp: 12
@@ -22,6 +23,7 @@ MonoBehaviour:
     behaviours:
     - {fileID: 11400000, guid: 510dded60cb083641828a94d472cce35, type: 2}
     - {fileID: 11400000}
+  unit: {fileID: 0}
   all: 1
   behaviourName: "\uC120\uD48D"
   buff: {fileID: 11400000, guid: 768c2266c4c7f3d4295c9111802b21f4, type: 2}

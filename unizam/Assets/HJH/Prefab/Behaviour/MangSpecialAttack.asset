@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8949bb772e5ef41aa111f6572d1f58, type: 3}
   m_Name: MangSpecialAttack
   m_EditorClassIdentifier: 
+  mpIdx: 3
   state: 0
   character:
     hp: 0

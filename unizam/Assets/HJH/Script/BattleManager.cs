@@ -86,7 +86,6 @@ public class BattleManager : MonoBehaviour
     public Slider[] sliders;
 
     public DiceAni dice;
-    public Sprite[] diceSprite;
 
     public int diceSu;//주사위 몇나왔는가
 
@@ -112,8 +111,11 @@ public class BattleManager : MonoBehaviour
     public Button restart;
     public Button quit;
 
+    public GameObject clear;
+
     private void Start()
     {
+        clear.SetActive(false);
         for(int i =0; i < GameManager.Instance.player.behaviours.Count; i++)
         {
             GameManager.Instance.player.behaviours[i].unit = player;
@@ -491,13 +493,37 @@ public class BattleManager : MonoBehaviour
 
     public void BattelWin()
     {
-        GameManager.Instance.player.behaviours.Add(GameManager.Instance.Reward);
-        SceneManager.LoadScene("MainScene");
+        StartCoroutine(BattleWinCo());
     }
 
     IEnumerator BattleWinCo()
     {
-        yield return null;
+        yield return new WaitForSeconds(1f);
+        dice.gameObject.SetActive(true);
+        if (enemys[0].name.Contains("Mang"))
+        {
+            dice.Stop(5);
+        }
+        else if (enemys[0].name.Contains("Du"))
+        {
+            dice.Stop(6);
+        }
+        else if (enemys[0].name.Contains("Fox"))
+        {
+            dice.Stop(7);
+        }
+        else
+        {
+            SceneManager.LoadScene("EndingScene");
+        }
+        yield return new WaitForSeconds(0.5f);
+        clear.SetActive(true);
+    }
+
+    public void NextScene()
+    {
+        GameManager.Instance.player.behaviours.Add(GameManager.Instance.Reward);
+        SceneManager.LoadScene("MainScene");
     }
 
 

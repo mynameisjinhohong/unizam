@@ -204,7 +204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6163360}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 906518447}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: NextScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6163360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3933,7 +3945,6 @@ MonoBehaviour:
   - {fileID: 1928643418}
   - {fileID: 734849994}
   dice: {fileID: 975416979}
-  diceSprite: []
   diceSu: 0
   choose: 0
   bg: {fileID: 0}
@@ -3953,6 +3964,7 @@ MonoBehaviour:
   audioPlay: {fileID: 906518449}
   restart: {fileID: 574345332}
   quit: {fileID: 1119170438}
+  clear: {fileID: 932557950}
   snakeSlider: {fileID: 0}
   dragon: {fileID: 0}
 --- !u!4 &906518448
@@ -4434,6 +4446,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7c639797f64a8b84bb30d6c041ffa872, type: 3}
   - {fileID: 21300000, guid: d88cc736310650d4bbf98aa685a06ae8, type: 3}
   - {fileID: 21300000, guid: d2543816972dd5a40aaf02b53a77012d, type: 3}
+  - {fileID: 21300000, guid: 6afb31d497f779b48a39e6cbd4c94e71, type: 3}
+  - {fileID: 21300000, guid: 71f45d19821a1df4a97b1439fd10dd6e, type: 3}
+  - {fileID: 21300000, guid: c0c2c6a23647f94418044fe105271098, type: 3}
   time: 0.05
 --- !u!1 &976064198
 GameObject:
