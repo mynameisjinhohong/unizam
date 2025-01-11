@@ -305,7 +305,13 @@ public class BattleManager : MonoBehaviour
 
     public void ChooseSkill(int idx)
     {
-        behaviour = GameManager.Instance.player.behaviours[idx];
+        for(int i =0; i<GameManager.Instance.player.behaviours.Count; i++)
+        {
+            if (GameManager.Instance.player.behaviours[i].mpIdx == idx)
+            {
+                behaviour = GameManager.Instance.player.behaviours[i];
+            }
+        }
         behaviour.character = GameManager.Instance.player;
         diceSu = idx;
         dice.Stop(diceSu);

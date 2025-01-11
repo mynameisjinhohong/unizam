@@ -31,11 +31,11 @@ public class SkillButton : MonoBehaviour
     public void OnSkillButton()
     {
         on = true;
-        for (int i = 0; i < skills.Length; i++)
+        for(int i =0; i< GameManager.Instance.player.behaviours.Count; i++)
         {
-            if (!(i < GameManager.Instance.player.behaviours.Count && i < GameManager.Instance.player.mp))
+            if(GameManager.Instance.player.behaviours[i].mpIdx < GameManager.Instance.player.mp)
             {
-                skills[i].GetComponent<Button>().interactable = false;
+                skills[GameManager.Instance.player.behaviours[i].mpIdx].GetComponent<Button>().interactable = true;
             }
         }
         for (int i = 0; i< skills.Length; i++)
@@ -51,7 +51,7 @@ public class SkillButton : MonoBehaviour
         for (int i = 0; i < skills.Length; i++)
         {
             skills[i].SetActive(false);
-            skills[i].GetComponent<Button>().interactable = true;
+            skills[i].GetComponent<Button>().interactable = false;
         }
         BattleManager.instance.State = BattleState.StartDice;
     }
