@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2571557311450852006}
   - component: {fileID: 641794563519026316}
   - component: {fileID: 4120892675327551888}
+  - component: {fileID: -3949057943615232400}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Enemy
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2367e0af595b28e4f919ec09453feb5b, type: 3}
+  m_Sprite: {fileID: 975813959, guid: 7eaba813a47d68549830e4e507acd4f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111,6 +112,8 @@ MonoBehaviour:
   BuffParent: {fileID: 0}
   HPCan: {fileID: 0}
   HpCanImage: {fileID: 3428233593567847835, guid: 4730253a7e6554f419fe92db741107aa, type: 3}
+  dieEffect1: {fileID: 0}
+  dieEffect2: {fileID: 0}
 --- !u!61 &4120892675327551888
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,19 +146,40 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0000011920929, y: -0.000000834465}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.68, y: 5.33}
+    oldSize: {x: 3.421125, y: 2.73}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.68, y: 5.33}
+  m_Size: {x: 3.649622, y: 3.1220496}
   m_EdgeRadius: 0
+--- !u!95 &-3949057943615232400
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2418270481052393022}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 10d6611ba9f65854ca9af468d549df18, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6913054991605418425
 GameObject:
   m_ObjectHideFlags: 0
