@@ -67,6 +67,11 @@ public class Encounter : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("방문");
+            if (GameManager.Instance.isClear[clearIndex] == false)
+            {
+                audioPlay.clip = hintaudioAudio;
+                audioPlay.Play();
+            }
             isVisit = true;
             if (monster == monster.snake) {
                 StartCoroutine(snakeFade());
@@ -77,11 +82,6 @@ public class Encounter : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         Debug.Log("나감");
-        if (GameManager.Instance.isClear[clearIndex] == false)
-        {
-            audioPlay.clip = hintaudioAudio;
-            audioPlay.Play();
-        }
         isVisit = false;
     }
 
