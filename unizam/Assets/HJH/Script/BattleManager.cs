@@ -60,7 +60,7 @@ public class BattleManager : MonoBehaviour
                     break;
                 case BattleState.BattleWin:
                     //나중에 연출 생기면 변경하기로
-                    SceneManager.LoadScene("MainScene");
+                    BattelWin();
                     break;
                 case BattleState.BattleLose:
                     break;
@@ -98,9 +98,11 @@ public class BattleManager : MonoBehaviour
 
     int enemyIdx = 0;
 
+    public SpriteRenderer bg;
 
     private void Start()
     {
+        bg.sprite = GameManager.Instance.bg;
         State = BattleState.StartDice;
         characters = new List<EnemyCharacter>();
         enemys= new List<GameObject>();
@@ -159,6 +161,7 @@ public class BattleManager : MonoBehaviour
                 }
                 break;
         }
+        GameManager.Instance.enemies.Clear();
     }
 
     private void Update()
@@ -358,5 +361,22 @@ public class BattleManager : MonoBehaviour
                 State = BattleState.EnemyTurnEnd;
             }
         }
+    }
+
+    public void Retry()
+    {
+        //암전되다가 StartScene으로 이동
+    }
+
+    public void Exit()
+    {
+        //암전 되다가 게임 종료.
+    }
+
+
+    public void BattelWin()
+    {
+        GameManager.Instance.player.behaviours.Add(GameManager.Instance.Reward);
+        SceneManager.LoadScene("MainScene");
     }
 }
