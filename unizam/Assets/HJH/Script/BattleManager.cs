@@ -185,7 +185,6 @@ public class BattleManager : MonoBehaviour
 
     public void AfterShow()
     {
-
         State = BattleState.StartDice;
         characters = new List<EnemyCharacter>();
         enemys = new List<GameObject>();
@@ -298,7 +297,7 @@ public class BattleManager : MonoBehaviour
         int ran = Random.Range(0, GameManager.Instance.player.behaviours.Count);
         behaviour = GameManager.Instance.player.behaviours[ran];
         behaviour.character = GameManager.Instance.player;
-        diceSu = ran;
+        diceSu = behaviour.mpIdx;
         dice.Stop(diceSu);
         skillButton.gameObject.GetComponent<Button>().interactable = false;
         State = BattleState.ChooseEnemy;
