@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BattlePlayer : MonoBehaviour
 {
+    public GameObject[] mp;
     public Slider hpBar;
     public Transform BuffParent;
     // Start is called before the first frame update
@@ -17,6 +18,17 @@ public class BattlePlayer : MonoBehaviour
     void Update()
     {
         hpBar.value = ((float)GameManager.Instance.player.hp / (float)GameManager.Instance.maxHp);
+        for(int i =0; i < mp.Length; i++)
+        {
+            if (i < GameManager.Instance.player.mp)
+            {
+                mp[i].SetActive(true);
+            }
+            else
+            {
+                mp[i].SetActive(false);
+            }
+        }
     }
     public void MakeBuff()
     {

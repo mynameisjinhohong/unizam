@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     //전투씬에 전달해 줘야 하는 것
     public List<EnemeyData> enemies;
     public Behaviour Reward;
-    public bool boss;
+    public monster monster;
     public Sprite bg;
 
     public int maxHp;

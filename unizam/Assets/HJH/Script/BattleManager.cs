@@ -63,6 +63,7 @@ public class BattleManager : MonoBehaviour
                     BattelWin();
                     break;
                 case BattleState.BattleLose:
+                    gameOver.SetActive(true);
                     break;
             }
 
@@ -71,7 +72,7 @@ public class BattleManager : MonoBehaviour
     //두억시니 스킬만을 위한 에드훅
     public int beforeDamage;
 
-
+    public GameObject gameOver;
 
     public GameObject player;
 
@@ -102,10 +103,24 @@ public class BattleManager : MonoBehaviour
 
     private void Start()
     {
+        switch (GameManager.Instance.monster)
+        {
+            case monster.man:
+
+                break;
+            default:
+                AfterShow();
+                break;
+        }
+        
+    }
+
+    public void AfterShow()
+    {
         //bg.sprite = GameManager.Instance.bg;
         State = BattleState.StartDice;
         characters = new List<EnemyCharacter>();
-        enemys= new List<GameObject>();
+        enemys = new List<GameObject>();
         player.GetComponent<BattlePlayer>().MakeBuff();
         switch (GameManager.Instance.enemies.Count)
         {
@@ -115,7 +130,7 @@ public class BattleManager : MonoBehaviour
                     GameObject enemy = Instantiate(GameManager.Instance.enemies[i].enemy.enemyPrefab, spawnPos1[i]);
                     enemy.GetComponent<BattleEnemy>().enemy.hp = GameManager.Instance.enemies[i].enemy.hp;
                     enemy.GetComponent<BattleEnemy>().enemy.behaviours = GameManager.Instance.enemies[i].enemy.behaviours;
-                    for(int j =0; j< enemy.GetComponent<BattleEnemy>().enemy.behaviours.Count; j++)
+                    for (int j = 0; j < enemy.GetComponent<BattleEnemy>().enemy.behaviours.Count; j++)
                     {
                         enemy.GetComponent<BattleEnemy>().enemy.behaviours[j].character = enemy.GetComponent<BattleEnemy>().enemy;
                     }

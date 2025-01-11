@@ -18,7 +18,6 @@ public class Encounter : MonoBehaviour
     public bool isVisit = false;
 
     public List<EnemeyData> enemy;
-    public bool boss;
     public Sprite bg;
     public Behaviour reward;
 
@@ -243,7 +242,7 @@ public class Encounter : MonoBehaviour
             GameManager.Instance.enemies.Add(enemy[i]);
         }
         GameManager.Instance.bg = bg;
-        GameManager.Instance.boss = boss;
+        GameManager.Instance.monster = monster;
         GameManager.Instance.Reward = reward;
 
         SceneManager.LoadScene("BattleScene");
