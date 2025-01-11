@@ -66,7 +66,15 @@ public class GameManager : MonoBehaviour
 
     public void Quit()
     {
+        if(canvas.gameObject.activeSelf == false)
+            canvas.SetActive(true);
         StartCoroutine(Fade());
+    }
+
+    public void Quit2() {
+        if (canvas.gameObject.activeSelf == false)
+            canvas.SetActive(true);
+        StartCoroutine(FadeQuit());
     }
 
     IEnumerator Fade()
@@ -95,6 +103,26 @@ public class GameManager : MonoBehaviour
         }
 
         canvas.SetActive(false);
+    }
+
+    IEnumerator FadeQuit()
+    {
+        quitUI.SetActive(false);
+
+        // 페이드아웃 (알파 값을 증가시킴)
+        float fadeCount = 0.0f;
+        while (fadeCount < 1.0f)
+        {
+            fadeCount += 0.01f; // 알파 값을 증가
+            fadeImage.color = new Color(0, 0, 0, fadeCount); // 검정색의 알파 값만 변경
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                                Application.Quit(); 
+        #endif
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
