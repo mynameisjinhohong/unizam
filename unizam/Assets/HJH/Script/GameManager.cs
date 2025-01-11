@@ -29,8 +29,11 @@ public class GameManager : MonoBehaviour
 
     public Vector3 playerPos;
 
+    public bool moveAble = true;
+
     private void Awake()
     {
+        moveAble = true;
         if (Instance == null)
         {
             Instance = this;
@@ -84,6 +87,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator Fade()
     {
+        GameManager.Instance.moveAble = false;
         quitUI.SetActive(false);
 
         // 페이드아웃 (알파 값을 증가시킴)
@@ -95,6 +99,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
 
+        GameManager.Instance.moveAble = true;
         // 씬 전환
         SceneManager.LoadScene("StartScene");
 

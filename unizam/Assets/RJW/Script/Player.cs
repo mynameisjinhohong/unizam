@@ -29,20 +29,25 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        // 이동 벡터 계산
-        Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime;
+        if (GameManager.Instance.moveAble == true) 
+        {
 
-        // 이동 후 예상 위치 계산
-        Vector2 targetPosition = rigid.position + nextVec;
+            // 이동 벡터 계산
+            Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime;
 
-        // x 좌표를 범위 내로 제한
-        targetPosition.x = Mathf.Clamp(targetPosition.x, -4.71f, 11219f);
+            // 이동 후 예상 위치 계산
+            Vector2 targetPosition = rigid.position + nextVec;
 
-        // 이동
-        rigid.MovePosition(targetPosition);
+            // x 좌표를 범위 내로 제한
+            targetPosition.x = Mathf.Clamp(targetPosition.x, -4.71f, 11219f);
 
-        // 애니메이터 속도 설정
-        animator.SetFloat("speed", Mathf.Abs(inputVec.x));
+            // 이동
+            rigid.MovePosition(targetPosition);
+
+            // 애니메이터 속도 설정
+            animator.SetFloat("speed", Mathf.Abs(inputVec.x));
+
+        }
     }
 
 
