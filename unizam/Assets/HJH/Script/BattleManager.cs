@@ -102,7 +102,7 @@ public class BattleManager : MonoBehaviour
 
     private void Start()
     {
-        bg.sprite = GameManager.Instance.bg;
+        //bg.sprite = GameManager.Instance.bg;
         State = BattleState.StartDice;
         characters = new List<EnemyCharacter>();
         enemys= new List<GameObject>();
