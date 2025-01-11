@@ -1513,6 +1513,7 @@ MonoBehaviour:
   quitUI: {fileID: 2007375686}
   fadeImage: {fileID: 533772461}
   canvas: {fileID: 322158604}
+  playerPos: {x: -4.71, y: -3.31, z: 0}
 --- !u!4 &1316138249
 Transform:
   m_ObjectHideFlags: 0

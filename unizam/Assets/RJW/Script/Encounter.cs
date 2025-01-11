@@ -349,6 +349,8 @@ public class Encounter : MonoBehaviour
         GameManager.Instance.monster = monster;
         GameManager.Instance.Reward = reward;
 
+
+        GameManager.Instance.playerPos = GameObject.Find("Player").transform.position ;
         SceneManager.LoadScene("BattleScene");
 
     }

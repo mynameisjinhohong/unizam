@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     public Image fadeImage;
     public GameObject canvas; // Canvas 오브젝트를 참조
 
+    public Vector3 playerPos;
+
     private void Awake()
     {
         if (Instance == null)
@@ -136,6 +138,7 @@ public class GameManager : MonoBehaviour
         else if (scene.name == "MainScene")
         {
             canvas.SetActive(false);
+            GameObject.Find("Player").transform.position = playerPos;
         }
     }
 
