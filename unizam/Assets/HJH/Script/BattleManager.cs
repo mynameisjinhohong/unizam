@@ -367,7 +367,10 @@ public class BattleManager : MonoBehaviour
                 characters[i].buffs.Add(characters[i].nextBuffs[j]);
             }
             characters[i].nextBuffs.Clear();
-            enemys[i].GetComponent<BattleEnemy>().MakeBuff();
+            if (enemys[i] != null)
+            {
+                enemys[i].GetComponent<BattleEnemy>().MakeBuff();
+            }
         }
         beforeDamage = 0;
         //게임 클리어 확인.
@@ -414,10 +417,16 @@ public class BattleManager : MonoBehaviour
         Character[] ch = new Character[1];
         ch[0] = GameManager.Instance.player;
         int nowHp = GameManager.Instance.player.hp;
-        characters[enemyIdx].behaviours[ran].Do(ch);
+        if (characters[enemyIdx].hp> 0)
+        {
+            characters[enemyIdx].behaviours[ran].Do(ch);
+            yield return new WaitForSeconds(1.5f);
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.3f);
+        }
         //적 애니메이션 연출
-        
-        yield return new WaitForSeconds(1.5f);
         beforeDamage += nowHp - GameManager.Instance.player.hp;
         if(GameManager.Instance.player.hp < 0)
         {
@@ -448,7 +457,10 @@ public class BattleManager : MonoBehaviour
                         characters[i].buffs.Add(characters[i].nextBuffs[j]);
                     }
                     characters[i].nextBuffs.Clear();
-                    enemys[i].GetComponent<BattleEnemy>().MakeBuff();
+                    if (enemys[i] != null)
+                    {
+                        enemys[i].GetComponent<BattleEnemy>().MakeBuff();
+                    }
                 }
                 turn += 1;
                 State = BattleState.EnemyTurnEnd;
