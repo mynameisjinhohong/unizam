@@ -13,6 +13,8 @@ public class BattleEnemy : MonoBehaviour
     public Transform HPCan;
     public GameObject HpCanImage;
     bool start;
+    public GameObject dieEffect1;
+    public GameObject dieEffect2;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,9 +33,9 @@ public class BattleEnemy : MonoBehaviour
                 {
                     enemy.behaviours[i].character = enemy;
                 }
-                HPCan = hpBar.transform.GetChild(3);
                 if(HpCanImage != null)
                 {
+                    HPCan = hpBar.transform.GetChild(3);
                     for (int i = 0; i < enemy.hp / 3; i++)
                     {
                         Instantiate(HpCanImage, HPCan);
@@ -71,7 +73,18 @@ public class BattleEnemy : MonoBehaviour
     public void EnemyDie()
     {
         //Á×À»¶§ ¿¬Ãâ
-        gameObject.SetActive(false);
-        hpBar.gameObject.SetActive(false);
+        if(dieEffect1!= null)
+        {
+            StartCoroutine(Die());
+        }
+    }
+
+    IEnumerator Die()
+    {
+        BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[10];
+        BattleManager.instance.audioPlay.Play();
+        dieEffect1.SetActive(true);
+        yield return new WaitForSeconds(0.35f);
+        dieEffect2.SetActive(true);
     }
 }

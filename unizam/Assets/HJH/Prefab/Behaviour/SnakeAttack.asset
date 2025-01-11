@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   character:
-    hp: 80
-    buffs: []
+    hp: 76
+    buffs:
+    - {fileID: 11400000, guid: 6610aec54c4055745a373bc411fb17aa, type: 2}
     nextBuffs: []
     behaviours:
     - {fileID: 11400000}
+  unit: {fileID: 0}
   all: 0
   behaviourName: 
   turn: 0
@@ -31,3 +33,4 @@ MonoBehaviour:
   - "\uD654\uC5FC\uC758 \uC624\uC624\uB77C"
   - "\uC6A9\uC758 \uC77C\uACA9"
   - "\uC2B9\uCC9C"
+  effect: {fileID: 8146468134018607501, guid: 1c1558fb630e2b6489d82688715d512a, type: 3}

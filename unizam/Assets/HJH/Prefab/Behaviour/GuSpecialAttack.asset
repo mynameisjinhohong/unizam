@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   character:
-    hp: -11
+    hp: 40
     buffs: []
     nextBuffs: []
     behaviours:
@@ -28,7 +28,10 @@ MonoBehaviour:
     - {fileID: 11400000, guid: ae96e19aa6e3e6943afad8ff3b784f95, type: 2}
     - {fileID: 11400000, guid: ae96e19aa6e3e6943afad8ff3b784f95, type: 2}
     - {fileID: 11400000, guid: ae96e19aa6e3e6943afad8ff3b784f95, type: 2}
+  unit: {fileID: 0}
   all: 0
   behaviourName: "\uC815\uAE30\uD761\uC218"
   maxDamage: 10
   minDamage: 6
+  effect: {fileID: 7270354889872654264, guid: 9a06858e7d02f884080de07b206db07b, type: 3}
+  effect2: {fileID: 7270354889872654264, guid: 6d3d975ed0209a540bb48849870c8877, type: 3}

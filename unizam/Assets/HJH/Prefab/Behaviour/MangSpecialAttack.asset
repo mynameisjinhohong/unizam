@@ -25,3 +25,4 @@ MonoBehaviour:
   maxDamage: 8
   minDamage: 4
   effect: {fileID: 2636853604688311438, guid: 69df49b7d0a4a1d4097649e8a658db6f, type: 3}
+  effect2: {fileID: 2636853604688311438, guid: ec91b02b1032faa4e9b082b6fe6429c7, type: 3}

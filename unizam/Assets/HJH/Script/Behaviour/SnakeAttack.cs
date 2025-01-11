@@ -13,6 +13,7 @@ public class SnakeAttack : Behaviour
     public Buff buff;
     bool fire = false;
     public string[] skillName;
+    public GameObject effect;
 
     private void OnEnable()
     {
@@ -23,6 +24,7 @@ public class SnakeAttack : Behaviour
     public override void Do(Character[] target)
     {
         int ran = Random.Range(0, 100);
+        unit.transform.GetChild(0).gameObject.SetActive(false);
         turn += 1;
         if(turn >= 8)
         {
@@ -34,6 +36,7 @@ public class SnakeAttack : Behaviour
         {
             if (fire)
             {
+                Instantiate(effect);
                 BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[9];
                 BattleManager.instance.audioPlay.Play();
                 int damage = Random.Range(fireDamage - 2, fireDamage + 3);
@@ -50,11 +53,10 @@ public class SnakeAttack : Behaviour
             }
             else
             {
-                BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[6];
-                BattleManager.instance.audioPlay.Play();
-                Debug.Log("기본공격");
                 if (ran < nomalPercent)
                 {
+                    BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[6];
+                    BattleManager.instance.audioPlay.Play();
                     int damage = Random.Range(MinDamage, MaxDamage);
                     for (int i = 0; i < character.buffs.Count; i++)
                     {
@@ -72,6 +74,7 @@ public class SnakeAttack : Behaviour
                     BattleManager.instance.audioPlay.Play();
                     fire = true;
                     character.nextBuffs.Add(buff);
+                    unit.transform.GetChild(0).gameObject.SetActive(true);
                 }
             }
         }

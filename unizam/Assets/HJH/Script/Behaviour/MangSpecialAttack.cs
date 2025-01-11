@@ -16,7 +16,7 @@ public class MangSpecialAttack : Behaviour
         BattleManager.instance.audioPlay.Play();
         if(unit.name == "Player")
         {
-
+            Instantiate(effect2);
         }
         else
         {

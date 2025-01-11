@@ -12,6 +12,8 @@ public class NomalAttack : Behaviour
         {
             ani.SetTrigger("Attack");
         }
+        BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[6];
+        BattleManager.instance.audioPlay.Play();
         int damage = Random.Range(MinDamage, MaxDamage);
         for(int i = 0; i < character.buffs.Count; i++)
         {
