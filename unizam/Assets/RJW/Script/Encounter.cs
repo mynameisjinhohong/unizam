@@ -44,18 +44,27 @@ public class Encounter : MonoBehaviour
             {
                 case monster.du:
                     if (GameManager.Instance.isClear[1] == false)
+                    {
                         StartCoroutine(duFade());
+                        GameManager.Instance.moveAble = false;
+                    }
                     break;
                 case monster.gu:
                     if (GameManager.Instance.isClear[2] == false)
+                    {
                         StartCoroutine(guFade());
+                        GameManager.Instance.moveAble = false;
+                    }
                     break;
                 case monster.snake:
                     StartCoroutine(snakeFade());
                     break;
                 case monster.man:
                     if (GameManager.Instance.isClear[0] == false)
+                    {
                         StartCoroutine(manFade());
+                        GameManager.Instance.moveAble = false;
+                    }
                     break;
             }
         }
@@ -365,6 +374,7 @@ public class Encounter : MonoBehaviour
 
 
         GameManager.Instance.playerPos = GameObject.Find("Player").transform.position ;
+        GameManager.Instance.moveAble = true;
         SceneManager.LoadScene("BattleScene");
 
     }
@@ -378,7 +388,7 @@ public class Encounter : MonoBehaviour
         GameManager.Instance.bg = bg;
         GameManager.Instance.monster = monster;
         GameManager.Instance.Reward = reward;
-
+        GameManager.Instance.moveAble = true;
         SceneManager.LoadScene("BossScene");
 
     }
