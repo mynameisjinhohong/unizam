@@ -14,17 +14,27 @@ public class Intro : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            Skip(1);
+        }
+    }
+
+    public void Skip(int su)
+    {
+        if (su == 1)
+        {
             idx++;
-            if(idx == sprites.Length)
+            if (idx == sprites.Length)
             {
                 SceneManager.LoadScene("MainScene");
             }
             sprite.sprite = sprites[idx];
         }
-    }
+        else
+        {
 
-    public void Skip()
-    {
-        SceneManager.LoadScene("MainScene");
+
+            SceneManager.LoadScene("MainScene");
+        }
+
     }
 }

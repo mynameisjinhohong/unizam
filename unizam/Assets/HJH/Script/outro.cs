@@ -14,6 +14,13 @@ public class outro : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            Skip(1);
+        }
+    }
+    public void Skip(int su)
+    {
+        if (su == 1)
+        {
             idx++;
             if (idx == sprites.Length)
             {
@@ -21,9 +28,10 @@ public class outro : MonoBehaviour
             }
             sprite.sprite = sprites[idx];
         }
-    }
-    public void Skip()
-    {
-        SceneManager.LoadScene("StartScene");
+        else
+        {
+            SceneManager.LoadScene("StartScene");
+        }
+
     }
 }

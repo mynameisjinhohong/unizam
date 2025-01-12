@@ -473,7 +473,7 @@ MonoBehaviour:
       - m_Target: {fileID: 591712723}
         m_TargetAssemblyTypeName: Intro, Assembly-CSharp
         m_MethodName: Skip
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -554,8 +554,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -12.3, y: -73.1}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -15, y: -80}
+  m_SizeDelta: {x: 30, y: -81.8664}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1784474859
 MonoBehaviour:
@@ -577,7 +577,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB118\uAE30\uAE30"
+  m_text: "\uBAA8\uB450 \uB118\uAE30\uAE30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 33e0ecc2f2c50e343b4e633d453bceca, type: 2}
   m_sharedMaterial: {fileID: 1808700269076136608, guid: 33e0ecc2f2c50e343b4e633d453bceca, type: 2}
