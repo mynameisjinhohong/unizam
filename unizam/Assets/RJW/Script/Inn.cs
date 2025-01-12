@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,8 @@ public class Inn : MonoBehaviour
     public int heal;
 
     public GameObject innUI;
+    public GameObject popupUI;
+    public TMP_Text popupText;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,18 +37,27 @@ public class Inn : MonoBehaviour
                 GameManager.Instance.player.mp -= 1;
                 GameManager.Instance.player.hp += heal;
 
-                Debug.Log("편히 쉴 수 있었다.");
+                StartCoroutine(popUp("휴식을 통해 체력 " + heal + "을 얻었습니다."));
                 spendNight = true;
             }
             else
             {
                 Debug.Log("마나가 부족합니다.");
+                StartCoroutine(popUp("마나가 부족합니다."));
             }
         
         }
         else {
             Debug.Log("더 쉴 수는 없다");
+            StartCoroutine(popUp("더 쉴 수는 없습니다."));
         }
+    }
+
+    IEnumerator popUp(string text) {
+        popupText.text = text;
+        popupUI.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        popupUI.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
