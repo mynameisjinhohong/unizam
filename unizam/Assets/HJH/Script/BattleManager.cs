@@ -505,6 +505,13 @@ public class BattleManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         dice.gameObject.SetActive(true);
+        for(int i = enemys.Count-1; i >= 0; i--)
+        {
+            if (enemys[i] == null)
+            {
+                enemys.RemoveAt(i);
+            }
+        }
         if (enemys[0].name.Contains("Mang"))
         {
             dice.Stop(5);
