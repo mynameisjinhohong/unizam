@@ -62,8 +62,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Init();
         behaviours = player.behaviours;
+        Init();
         // 씬 로드 이벤트 등록
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
