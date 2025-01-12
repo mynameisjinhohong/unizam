@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
         }
 
         // 종료창 활성화
-        if (Input.GetKey(KeyCode.Escape) && SceneManager.GetActiveScene().name == "MainScene")
+        if (Input.GetKey(KeyCode.Escape) && (SceneManager.GetActiveScene().name == "MainScene" || SceneManager.GetActiveScene().name == "BattleScene" || SceneManager.GetActiveScene().name == "BossScene"))
         {
             canvas.SetActive(true);
             quitUI.SetActive(true);
@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
     {
         if(canvas.gameObject.activeSelf == false)
             canvas.SetActive(true);
+        Init();
         StartCoroutine(Fade());
     }
 
