@@ -20,25 +20,25 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
-        if (player != null)
-        {
-            // 카메라 위치 갱신
-            transform.position = player.position + offset;
+        //if (player != null)
+        //{
+        //    // 카메라 위치 갱신
+        //    transform.position = player.position + offset;
 
-            // 플레이어 이동량 계산
-            Vector3 playerDelta = player.position - previousPlayerPosition;
+        //    // 플레이어 이동량 계산
+        //    Vector3 playerDelta = player.position - previousPlayerPosition;
 
-            // 배경 UI 이동
-            foreach (RectTransform bg in backgroundUI)
-            {
-                if (bg != null)
-                {
-                    bg.position -= playerDelta; // 배경 UI를 플레이어 이동량만큼 이동
-                }
-            }
+        //    // 배경 UI 이동
+        //    foreach (RectTransform bg in backgroundUI)
+        //    {
+        //        if (bg != null)
+        //        {
+        //            bg.position -= playerDelta; // 배경 UI를 플레이어 이동량만큼 이동
+        //        }
+        //    }
 
-            // 플레이어의 현재 위치 저장
-            previousPlayerPosition = player.position;
-        }
+        //    // 플레이어의 현재 위치 저장
+        //    previousPlayerPosition = player.position;
+        //}
     }
 }

@@ -40,10 +40,11 @@ public class Player : MonoBehaviour
 
             // x 좌표를 범위 내로 제한
             targetPosition.x = Mathf.Clamp(targetPosition.x, -4.71f, 11219f);
-
+            Debug.Log(transform.position.x);
             // 이동
             rigid.MovePosition(targetPosition);
 
+            Debug.Log(transform.position.x);
             // 애니메이터 속도 설정
             animator.SetFloat("speed", Mathf.Abs(inputVec.x));
 
