@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     {
         player.hp = maxHp;
         player.mp = 0;
+        playerPos = new Vector3(-4.71f, -3.31f, 0);
         isClear = new List<bool>();
         for(int i =0; i<3; i++)
         {
