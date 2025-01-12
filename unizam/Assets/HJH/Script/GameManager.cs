@@ -52,7 +52,11 @@ public class GameManager : MonoBehaviour
         player.hp = maxHp;
         player.mp = 0;
         playerPos = new Vector3(-4.71f, -3.31f, 0);
-        player.behaviours = behaviours;
+        player.behaviours.Clear();
+        for (int i = 0; i < behaviours.Count; i++)
+        {
+            player.behaviours.Add(behaviours[i]);
+        }
         isClear = new List<bool>();
         for(int i =0; i<3; i++)
         {
@@ -62,7 +66,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        behaviours = player.behaviours;
+        for (int i = 0; i < player.behaviours.Count; i++)
+        {
+            behaviours.Add(player.behaviours[i]);
+        }
         Init();
         // 씬 로드 이벤트 등록
         SceneManager.sceneLoaded += OnSceneLoaded;
