@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public List<Behaviour> behaviours = new List<Behaviour>();
+
     //전투씬에 전달해 줘야 하는 것
     public List<EnemeyData> enemies;
     public Behaviour Reward;
@@ -50,6 +52,7 @@ public class GameManager : MonoBehaviour
         player.hp = maxHp;
         player.mp = 0;
         playerPos = new Vector3(-4.71f, -3.31f, 0);
+        player.behaviours = behaviours;
         isClear = new List<bool>();
         for(int i =0; i<3; i++)
         {
@@ -60,7 +63,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Init();
-
+        behaviours = player.behaviours;
         // 씬 로드 이벤트 등록
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
