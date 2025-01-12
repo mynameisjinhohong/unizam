@@ -513,7 +513,7 @@ public class BattleManager : MonoBehaviour
         {
             dice.Stop(6);
         }
-        else if (enemys[0].name.Contains("Fox"))
+        else if (enemys[0].name.Contains("Gu") || enemys[0].name.Contains("Fox"))
         {
             dice.Stop(7);
         }

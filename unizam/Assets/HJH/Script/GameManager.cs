@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        //GameObject.Find("Player").transform.localPosition = playerPos;
         if (player.hp > maxHp)
         {
             player.hp = maxHp;
@@ -147,6 +148,8 @@ public class GameManager : MonoBehaviour
         {
             canvas.SetActive(false);
             GameObject.Find("Player").transform.localPosition = playerPos;
+            Debug.Log(GameObject.Find("Player").transform.localPosition);
+            Debug.Log(playerPos);
         }
         else if (scene.name == "BattleScene") {
             BattleManager.instance.restart.onClick.AddListener(() => Quit());
