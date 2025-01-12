@@ -584,7 +584,13 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator EndDragon()
     {
-        yield return new WaitForSeconds(0.25f);
+        for(int i = 0; i< dragonSprite.Length; i++)
+        {
+            
+            yield return new WaitForSeconds(0.1f);
+            dragon2.GetComponent<Image>().sprite = dragonSprite[i];
+        }
+        yield return new WaitForSeconds(0.5f);
         gameOver.SetActive(true);
     }
 }
