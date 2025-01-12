@@ -9,8 +9,7 @@ public class DuforPlayerAttack : Behaviour
     public override void Do(Character[] target)
     {
         Instantiate(effect);
-        BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[4];
-        BattleManager.instance.audioPlay.Play();
+        BattleManager.instance.PlaySound(4);
         for (int i = 0; i < target.Length; i++)
         {
             int damage = BattleManager.instance.beforeDamage * 2;

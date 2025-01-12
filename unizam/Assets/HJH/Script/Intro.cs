@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Intro : MonoBehaviour
@@ -14,7 +15,11 @@ public class Intro : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             idx++;
-
+            if(idx == sprites.Length)
+            {
+                SceneManager.LoadScene("MainScene");
+            }
+            sprite.sprite = sprites[idx];
         }
     }
 }

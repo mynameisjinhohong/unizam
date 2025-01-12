@@ -106,14 +106,46 @@ public class BattleManager : MonoBehaviour
     public AudioClip[] audios;
     //0 - 망태 등장, 1 - 베기, 2- 선풍 스킬, 3- 망태스킬, 4- 두억스킬, 5- 구미호스킬, 6- 몬스터평타, 7 - 이무기오오라, 8 - 이무기 승천, 9 - 이무기공격, 10 - 몬스터 죽을때
     public AudioSource audioPlay;
-
+    public GameObject newAudio;
 
     public Button restart;
     public Button quit;
 
     public GameObject clear;
 
-    private void Start()
+    public void PlaySound(int idx)
+    {
+        // 기본 AudioSource가 없거나 이미 재생 중인 경우
+        if (audioPlay == null || audioPlay.isPlaying)
+        {
+            // 새 AudioSource를 동적으로 생성
+            GameObject newAudioSourceObject = Instantiate(newAudio, transform);
+            AudioSource newAudioSource = newAudioSourceObject.GetComponent<AudioSource>();
+
+            if (newAudioSource == null)
+            {
+                Debug.LogError("audioSourcePrefab에 AudioSource 컴포넌트가 없습니다.");
+                return;
+            }
+
+            // AudioClip과 볼륨 설정
+            newAudioSource.clip = audios[idx];
+
+            // 효과음 재생
+            newAudioSource.Play();
+
+            // AudioClip의 길이만큼 대기 후 오브젝트 제거
+            Destroy(newAudioSourceObject, audios[idx].length);
+        }
+        else
+        {
+            // 기존 AudioSource에서 재생
+            audioPlay.clip = audios[idx];
+            audioPlay.Play();
+        }
+    }
+
+        private void Start()
     {
         clear.SetActive(false);
         for(int i =0; i < GameManager.Instance.player.behaviours.Count; i++)

@@ -10,8 +10,7 @@ public class PlayerNomalAttack : Behaviour
     public override void Do(Character[] target)
     {
         int damage = Random.Range(MinDamage, MaxDamage);
-        BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[1];
-        BattleManager.instance.audioPlay.Play();
+        BattleManager.instance.PlaySound(1);
         for (int i = 0; i < character.buffs.Count; i++)
         {
             damage = character.buffs[i].BuffEffect(true, damage);

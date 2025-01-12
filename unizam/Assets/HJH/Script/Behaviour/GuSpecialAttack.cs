@@ -11,9 +11,8 @@ public class GuSpecialAttack : Behaviour
     public GameObject effect2;
     public override void Do(Character[] target)
     {
-        BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[5];
-        BattleManager.instance.audioPlay.Play();
-        if(unit.name == "Player")
+        BattleManager.instance.PlaySound(5);
+        if (unit.name == "Player")
         {
             Instantiate(effect2);
         }

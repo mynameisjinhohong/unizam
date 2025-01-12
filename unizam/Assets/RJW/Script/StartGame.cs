@@ -52,7 +52,8 @@ public class StartGame : MonoBehaviour
         }
 
         // ¾À ÀüÈ¯
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("OpeningScene");
+        // SceneManager.LoadScene("MainScene");
     }
 
 }

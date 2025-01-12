@@ -82,6 +82,7 @@ public class BattleEnemy : MonoBehaviour
 
     IEnumerator Die()
     {
+        BattleManager.instance.PlaySound(10);
         BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[10];
         BattleManager.instance.audioPlay.Play();
         dieEffect1.SetActive(true);

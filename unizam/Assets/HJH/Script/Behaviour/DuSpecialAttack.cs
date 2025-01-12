@@ -23,9 +23,8 @@ public class DuSpecialAttack : Behaviour
         }
         else
         {
-            BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[4];
-            BattleManager.instance.audioPlay.Play();
-            if(unit.name == "Player")
+            BattleManager.instance.PlaySound(4);
+            if (unit.name == "Player")
             {
                 Instantiate(effect2);
             }
