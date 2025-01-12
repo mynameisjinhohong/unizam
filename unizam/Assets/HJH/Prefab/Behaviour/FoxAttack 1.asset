@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88335dd65eab3694b8bf3e0880530970, type: 3}
   m_Name: FoxAttack 1
   m_EditorClassIdentifier: 
+  mpIdx: 0
   state: 1
   character:
-    hp: 0
+    hp: -12
     buffs: []
     nextBuffs: []
-    behaviours: []
+    behaviours:
+    - {fileID: 11400000}
+  unit: {fileID: 0}
   all: 0
   behaviourName: 
-  MaxDamage: 6
-  MinDamage: 2
+  MaxDamage: 5
+  MinDamage: 1

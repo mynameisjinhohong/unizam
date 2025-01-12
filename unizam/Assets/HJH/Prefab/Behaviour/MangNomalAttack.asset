@@ -12,13 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88335dd65eab3694b8bf3e0880530970, type: 3}
   m_Name: MangNomalAttack
   m_EditorClassIdentifier: 
+  mpIdx: 0
   state: 1
   character:
-    hp: 0
+    hp: -1
     buffs: []
     nextBuffs: []
-    behaviours: []
+    behaviours:
+    - {fileID: 11400000, guid: 0caa77f35f391464d9567cf7a2a3d0d2, type: 2}
+    - {fileID: 11400000}
+    - {fileID: 11400000}
+    - {fileID: 11400000}
+    - {fileID: 11400000}
+  unit: {fileID: 0}
   all: 0
   behaviourName: 
-  MaxDamage: 7
-  MinDamage: 3
+  MaxDamage: 6
+  MinDamage: 2

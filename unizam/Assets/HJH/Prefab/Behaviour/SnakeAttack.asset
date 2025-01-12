@@ -15,20 +15,19 @@ MonoBehaviour:
   mpIdx: 0
   state: 0
   character:
-    hp: 76
-    buffs:
-    - {fileID: 11400000, guid: 6610aec54c4055745a373bc411fb17aa, type: 2}
+    hp: 3
+    buffs: []
     nextBuffs: []
     behaviours:
     - {fileID: 11400000}
   unit: {fileID: 0}
   all: 0
   behaviourName: 
-  turn: 0
+  turn: 9
   nomalPercent: 30
-  MinDamage: 8
-  MaxDamage: 12
-  fireDamage: 15
+  MinDamage: 6
+  MaxDamage: 10
+  fireDamage: 13
   buff: {fileID: 11400000, guid: 6610aec54c4055745a373bc411fb17aa, type: 2}
   skillName:
   - "\uD654\uC5FC\uC758 \uC624\uC624\uB77C"

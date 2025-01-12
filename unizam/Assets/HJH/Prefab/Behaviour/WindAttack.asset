@@ -15,15 +15,17 @@ MonoBehaviour:
   mpIdx: 1
   state: 0
   character:
-    hp: 35
+    hp: 50
     buffs: []
     nextBuffs: []
     behaviours:
     - {fileID: 11400000, guid: cfdfc3361362fab4caaa31cdf3e30adf, type: 2}
     - {fileID: 11400000}
+    - {fileID: 11400000, guid: 0caa77f35f391464d9567cf7a2a3d0d2, type: 2}
+    - {fileID: 11400000, guid: 5dc97d8731467f846ba97f8da513ed90, type: 2}
   unit: {fileID: 0}
   all: 1
   behaviourName: "\uC120\uD48D"
   buff: {fileID: 11400000, guid: 768c2266c4c7f3d4295c9111802b21f4, type: 2}
-  maxDamage: 5
-  minDamage: 1
+  maxDamage: 6
+  minDamage: 2
