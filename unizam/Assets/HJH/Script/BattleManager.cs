@@ -572,9 +572,13 @@ public class BattleManager : MonoBehaviour
 
 
     public GameObject dragon;
+    public GameObject dragon2;
+    public Sprite[] dragonSprite;
     public void DragonPower()
     {
         dragon.SetActive(true);
+        dragon2.SetActive(true);
+        dragon2.GetComponent<Image>().sprite = dragonSprite[0];
         StartCoroutine(EndDragon());
     }
 

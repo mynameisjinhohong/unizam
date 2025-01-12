@@ -158,10 +158,8 @@ public class GameManager : MonoBehaviour
         {
             canvas.SetActive(false);
             GameObject.Find("Player").transform.localPosition = playerPos;
-            Debug.Log(GameObject.Find("Player").transform.localPosition);
-            Debug.Log(playerPos);
         }
-        else if (scene.name == "BattleScene") {
+        else if (scene.name == "BattleScene"|| scene.name == "BossScene") {
             BattleManager.instance.restart.onClick.AddListener(() =>
             {
                 Quit();
