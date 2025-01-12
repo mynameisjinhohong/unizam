@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     public void Init()
     {
         player.hp = maxHp;
+        player.mp = 0;
         isClear = new List<bool>();
         for(int i =0; i<3; i++)
         {
