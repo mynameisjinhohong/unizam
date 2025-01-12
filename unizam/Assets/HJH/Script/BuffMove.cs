@@ -11,7 +11,7 @@ public class BuffMove : MonoBehaviour
         if (viewportPos.x > 0.5f)
         {
             // 자식 오브젝트의 위치 변경
-            transform.GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(-240, 0);
+            transform.GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(-450, 0);
         }
         else
         {
