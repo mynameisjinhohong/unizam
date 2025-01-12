@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SnakeData
   m_EditorClassIdentifier: 
   enemy:
-    hp: 80
+    hp: 60
     buffs: []
     nextBuffs: []
     behaviours:

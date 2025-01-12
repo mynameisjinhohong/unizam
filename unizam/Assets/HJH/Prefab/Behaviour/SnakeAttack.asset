@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946d4b99af9f693468b7df3188ed2ad0, type: 3}
   m_Name: SnakeAttack
   m_EditorClassIdentifier: 
+  mpIdx: 0
   state: 0
   character:
     hp: 76
@@ -27,7 +28,7 @@ MonoBehaviour:
   nomalPercent: 30
   MinDamage: 8
   MaxDamage: 12
-  fireDamage: 20
+  fireDamage: 15
   buff: {fileID: 11400000, guid: 6610aec54c4055745a373bc411fb17aa, type: 2}
   skillName:
   - "\uD654\uC5FC\uC758 \uC624\uC624\uB77C"

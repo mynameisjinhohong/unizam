@@ -34,7 +34,7 @@ public class DuSpecialAttack : Behaviour
             }
             for (int i = 0; i < target.Length; i++)
             {
-                int damage = (duData.enemy.hp -character.hp)*5;
+                int damage = (duData.enemy.hp -character.hp)*4;
                 for (int j = 0; j < character.buffs.Count; j++)
                 {
                     damage = character.buffs[j].BuffEffect(true, damage);

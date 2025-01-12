@@ -26,7 +26,7 @@ public class SnakeAttack : Behaviour
         int ran = Random.Range(0, 100);
         unit.transform.GetChild(0).gameObject.SetActive(false);
         turn += 1;
-        if(turn >= 8)
+        if(turn >= 10)
         {
             BattleManager.instance.PlaySound(8);
             BattleManager.instance.DragonPower();
