@@ -45,9 +45,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void Init()
     {
         player.hp = maxHp;
+        isClear = new List<bool>();
+        for(int i =0; i<3; i++)
+        {
+            isClear.Add(false);
+        }
+    }
+
+    private void Start()
+    {
+        Init();
 
         // 씬 로드 이벤트 등록
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -152,7 +162,12 @@ public class GameManager : MonoBehaviour
             Debug.Log(playerPos);
         }
         else if (scene.name == "BattleScene") {
-            BattleManager.instance.restart.onClick.AddListener(() => Quit());
+            BattleManager.instance.restart.onClick.AddListener(() =>
+            {
+                Quit();
+                Init();
+            }
+            );
             BattleManager.instance.quit.onClick.AddListener(() => Quit2());
         }
     }

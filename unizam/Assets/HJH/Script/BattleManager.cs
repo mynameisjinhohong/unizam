@@ -560,7 +560,7 @@ public class BattleManager : MonoBehaviour
         {
             SceneManager.LoadScene("EndingScene");
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
         clear.SetActive(true);
     }
 
