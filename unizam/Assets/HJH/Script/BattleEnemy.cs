@@ -16,6 +16,7 @@ public class BattleEnemy : MonoBehaviour
     public bool destroy = false;
     public GameObject dieEffect1;
     public GameObject dieEffect2;
+    bool die = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,9 +49,10 @@ public class BattleEnemy : MonoBehaviour
         else
         {
             hpBar.value = ((float)enemy.hp/ (float)maxHp);
-            if(hpBar.value <= 0)
+            if(hpBar.value <= 0 && !die)
             {
                 EnemyDie();
+                die = true;
             }
             if(hpPos!= null)
             {
@@ -83,8 +85,6 @@ public class BattleEnemy : MonoBehaviour
     IEnumerator Die()
     {
         BattleManager.instance.PlaySound(10);
-        BattleManager.instance.audioPlay.clip = BattleManager.instance.audios[10];
-        BattleManager.instance.audioPlay.Play();
         dieEffect1.SetActive(true);
         yield return new WaitForSeconds(0.35f);
         dieEffect2.SetActive(true);
