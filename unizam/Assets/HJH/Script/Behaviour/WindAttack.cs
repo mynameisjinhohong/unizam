@@ -10,7 +10,7 @@ public class WindAttack : Behaviour
     public int minDamage;
     public override void Do(Character[] target)
     {
-        BattleManager.instance.PlaySound(1);
+        BattleManager.instance.PlaySound(2);
         for (int i = 0; i < target.Length; i++)
         {
             int damage = Random.Range(minDamage, maxDamage);

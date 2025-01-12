@@ -22,4 +22,8 @@ public class outro : MonoBehaviour
             sprite.sprite = sprites[idx];
         }
     }
+    public void Skip()
+    {
+        SceneManager.LoadScene("StartScene");
+    }
 }
