@@ -56,7 +56,10 @@ public class DiceAni : MonoBehaviour
     {
         StopAllCoroutines();
         stop = true;
-        skillTexts.gameObject.SetActive(true);
+        if(idx < 5)
+        {
+            skillTexts.gameObject.SetActive(true);
+        }
         for(int i =0; i< GameManager.Instance.player.behaviours.Count; i++)
         {
             if(idx == GameManager.Instance.player.behaviours[i].mpIdx)
@@ -73,7 +76,7 @@ public class DiceAni : MonoBehaviour
      
     public void MoveSkillText()
     {
-        if (stop)
+        if (stop && !BattleManager.instance.clearBool)
         {
             skillDescribe.SetActive(true);
             StartCoroutine(MoveSkill());
@@ -82,8 +85,11 @@ public class DiceAni : MonoBehaviour
 
     public void StopSkillTest()
     {
-        StopAllCoroutines();
-        skillDescribe.SetActive(false);
+        if (stop && !BattleManager.instance.clearBool)
+        {
+            StopAllCoroutines();
+            skillDescribe.SetActive(false);
+        }
     }
 
     IEnumerator MoveSkill()
