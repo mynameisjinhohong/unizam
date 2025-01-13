@@ -147,7 +147,7 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-        private void Start()
+    private void Start()
     {
         clearBool = false;
         clear.SetActive(false);

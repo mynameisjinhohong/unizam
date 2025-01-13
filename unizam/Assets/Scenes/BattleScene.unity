@@ -3327,7 +3327,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: beec36fc076a10d40a1034b20c33e0df, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ed4f208db216fe649aca5ab4a6d0c8b1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5002,6 +5002,7 @@ MonoBehaviour:
   restart: {fileID: 574345332}
   quit: {fileID: 1119170438}
   clear: {fileID: 932557950}
+  clearBool: 0
   snakeSlider: {fileID: 0}
   dragon: {fileID: 0}
   dragon2: {fileID: 0}
@@ -5134,7 +5135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &932557951
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7136,6 +7137,7 @@ MonoBehaviour:
   - {fileID: 1950938277}
   - {fileID: 24422339}
   - {fileID: 187669057}
+  question: {fileID: 21300000, guid: ed4f208db216fe649aca5ab4a6d0c8b1, type: 3}
 --- !u!1 &1225377820
 GameObject:
   m_ObjectHideFlags: 0

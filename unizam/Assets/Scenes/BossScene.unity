@@ -1973,7 +1973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2545,9 +2545,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 756.6, y: 201}
+  m_AnchoredPosition: {x: 116, y: -8}
   m_SizeDelta: {x: 450, y: 160}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &471982996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3987,7 +3987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4271,7 +4271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4692,7 +4692,14 @@ MonoBehaviour:
   - {fileID: 764275993}
   - {fileID: 872791116}
   - {fileID: 950525022}
-  skillDescribe: []
+  skillDescribe:
+  - {fileID: 1966696392}
+  - {fileID: 346505226}
+  - {fileID: 1386045965}
+  - {fileID: 816474119}
+  - {fileID: 1888563996}
+  - {fileID: 794427718}
+  question: {fileID: 21300000, guid: ed4f208db216fe649aca5ab4a6d0c8b1, type: 3}
 --- !u!114 &837064596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5927,6 +5934,7 @@ MonoBehaviour:
   restart: {fileID: 1059767518}
   quit: {fileID: 752200105}
   clear: {fileID: 1030015525}
+  clearBool: 0
   snakeSlider: {fileID: 332308414}
   dragon: {fileID: 1208906724}
   dragon2: {fileID: 1636773401}
@@ -6340,6 +6348,7 @@ GameObject:
   - component: {fileID: 975416977}
   - component: {fileID: 975416976}
   - component: {fileID: 975416979}
+  - component: {fileID: 975416980}
   m_Layer: 5
   m_Name: DiceButton
   m_TagString: Untagged
@@ -6491,6 +6500,51 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d88cc736310650d4bbf98aa685a06ae8, type: 3}
   - {fileID: 21300000, guid: d2543816972dd5a40aaf02b53a77012d, type: 3}
   time: 0.05
+--- !u!114 &975416980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975416974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 975416979}
+          m_TargetAssemblyTypeName: DiceAni, Assembly-CSharp
+          m_MethodName: MoveSkillText
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 975416979}
+          m_TargetAssemblyTypeName: DiceAni, Assembly-CSharp
+          m_MethodName: StopSkillTest
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &979610773
 GameObject:
   m_ObjectHideFlags: 0
@@ -7842,6 +7896,7 @@ MonoBehaviour:
   - {fileID: 1681991420}
   - {fileID: 602305675}
   skillDescribe: []
+  question: {fileID: 0}
 --- !u!1 &1208906724
 GameObject:
   m_ObjectHideFlags: 0
@@ -8575,7 +8630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10623,7 +10678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11336,7 +11391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

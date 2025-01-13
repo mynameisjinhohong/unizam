@@ -10,10 +10,28 @@ public class SkillButton : MonoBehaviour
     public Button skillButton;
     public GameObject[] skills;
     public GameObject[] skillDescribe;
+    public Sprite question;
     public void Start()
     {
         OffSkillButton();
         on = false;
+        for(int j = 0; j<skills.Length; j++)
+        {
+            bool find = false;
+            for (int i = 0; i < GameManager.Instance.player.behaviours.Count; i++)
+            {
+                if(GameManager.Instance.player.behaviours[i].mpIdx == j)
+                {
+                    find = true;
+                    break;
+                }
+            }
+            if (!find)
+            {
+                skills[j].transform.GetChild(0).GetComponent<Image>().sprite = question;
+            }
+        }
+        
     }
 
     public void SkillBto()
