@@ -198,6 +198,7 @@ MonoBehaviour:
   BuffParent: {fileID: 0}
   HPCan: {fileID: 0}
   HpCanImage: {fileID: 3428233593567847835, guid: 4730253a7e6554f419fe92db741107aa, type: 3}
+  destroy: 0
   dieEffect1: {fileID: 398496468845230926}
   dieEffect2: {fileID: 8766222056303356061}
 --- !u!61 &4120892675327551888
@@ -291,7 +292,7 @@ Transform:
   m_GameObject: {fileID: 6913054991605418425}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 5, z: 0}
+  m_LocalPosition: {x: 0.32, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
