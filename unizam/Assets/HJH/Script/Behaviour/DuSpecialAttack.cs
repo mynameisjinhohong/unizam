@@ -9,10 +9,12 @@ public class DuSpecialAttack : Behaviour
     public bool wait = false;
     public GameObject effect;
     public GameObject effect2;
+    public int hp;
 
     private void OnEnable()
     {
         wait = true;
+        hp = character.hp;
     }
 
     public override void Do(Character[] target)
@@ -34,7 +36,7 @@ public class DuSpecialAttack : Behaviour
             }
             for (int i = 0; i < target.Length; i++)
             {
-                int damage = (duData.enemy.hp -character.hp)*4;
+                int damage = (hp -character.hp)*5;
                 for (int j = 0; j < character.buffs.Count; j++)
                 {
                     damage = character.buffs[j].BuffEffect(true, damage);
@@ -43,9 +45,11 @@ public class DuSpecialAttack : Behaviour
                 {
                     damage = target[i].buffs[k].BuffEffect(false, damage);
                 }
+                Debug.Log(damage);
                 target[i].hp -= damage;
             }
             wait = true;
         }
+        hp = character.hp;
     }
 }

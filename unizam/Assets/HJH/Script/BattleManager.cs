@@ -113,8 +113,8 @@ public class BattleManager : MonoBehaviour
     public Button quit;
 
     public GameObject clear;
-    public bool clearBool = false;
-
+    bool clearBool = false;
+    public bool clearBoolPublic = false;
     public void PlaySound(int idx)
     {
         // 기본 AudioSource가 없거나 이미 재생 중인 경우
@@ -150,6 +150,7 @@ public class BattleManager : MonoBehaviour
     private void Start()
     {
         clearBool = false;
+        clearBoolPublic = false;
         clear.SetActive(false);
         for(int i =0; i < GameManager.Instance.player.behaviours.Count; i++)
         {
@@ -546,6 +547,7 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator BattleWinCo()
     {
+        clearBoolPublic = true;
         yield return new WaitForSeconds(1f);
         dice.gameObject.SetActive(true);
         for(int i = enemys.Count-1; i >= 0; i--)

@@ -76,7 +76,7 @@ public class DiceAni : MonoBehaviour
      
     public void MoveSkillText()
     {
-        if (stop && !BattleManager.instance.clearBool)
+        if (stop && !BattleManager.instance.clearBoolPublic)
         {
             skillDescribe.SetActive(true);
             StartCoroutine(MoveSkill());
@@ -85,7 +85,7 @@ public class DiceAni : MonoBehaviour
 
     public void StopSkillTest()
     {
-        if (stop && !BattleManager.instance.clearBool)
+        if (stop && !BattleManager.instance.clearBoolPublic)
         {
             StopAllCoroutines();
             skillDescribe.SetActive(false);
