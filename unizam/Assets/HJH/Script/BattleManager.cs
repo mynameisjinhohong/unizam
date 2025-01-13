@@ -546,14 +546,17 @@ public class BattleManager : MonoBehaviour
         }
         if (enemys[0].name.Contains("Mang"))
         {
+            Debug.Log("망태 스킬 get");
             dice.Stop(5);
         }
         else if (enemys[0].name.Contains("Du"))
         {
+            Debug.Log("두억시니 스킬 get");
             dice.Stop(6);
         }
         else if (enemys[0].name.Contains("Gu") || enemys[0].name.Contains("Fox"))
         {
+            Debug.Log("구미호 스킬 get");
             dice.Stop(7);
         }
         else
