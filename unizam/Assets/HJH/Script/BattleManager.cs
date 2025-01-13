@@ -113,7 +113,7 @@ public class BattleManager : MonoBehaviour
     public Button quit;
 
     public GameObject clear;
-    bool clearBool = false;
+    public bool clearBool = false;
 
     public void PlaySound(int idx)
     {
