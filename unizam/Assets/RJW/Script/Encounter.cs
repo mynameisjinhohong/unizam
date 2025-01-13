@@ -43,7 +43,7 @@ public class Encounter : MonoBehaviour
 
     void Update()
     {
-        if (isVisit == true && Input.GetKeyDown(KeyCode.Space)) {
+        if (isVisit == true) {
 
             clear = true;
 
@@ -65,6 +65,7 @@ public class Encounter : MonoBehaviour
                     break;
                 case monster.snake:
                     StartCoroutine(snakeFade());
+                    GameManager.Instance.moveAble = false;
                     break;
                 case monster.man:
                     if (GameManager.Instance.isClear[0] == false)
@@ -79,6 +80,10 @@ public class Encounter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Scan") && monster == monster.snake)
+        {
+            StartCoroutine(snakeFade());
+        }
         if (collision.CompareTag("Player"))
         {
             Debug.Log("방문");
@@ -88,9 +93,11 @@ public class Encounter : MonoBehaviour
                 audioPlay.Play();
             }
             isVisit = true;
+            /*
             if (monster == monster.snake) {
                 StartCoroutine(snakeFade());
             }
+            */
         }
     }
 
@@ -104,9 +111,9 @@ public class Encounter : MonoBehaviour
     IEnumerator duFade()
     {
 
-        encounterUI.SetActive(true);
-        yield return new WaitForSeconds(1.3f);
-        encounterUI.SetActive(false);
+        //encounterUI.SetActive(true);
+        //yield return new WaitForSeconds(1.3f);
+        //encounterUI.SetActive(false);
 
         GameManager.Instance.isClear[1] = true;
         float fadeCount = 0;
@@ -240,9 +247,9 @@ public class Encounter : MonoBehaviour
 
             //yield return new WaitForSeconds(1.0f);
 
-            encounterUI.SetActive(true);
-            yield return new WaitForSeconds(1.3f);
-            encounterUI.SetActive(false);
+           // encounterUI.SetActive(true);
+            //yield return new WaitForSeconds(1.3f);
+            //encounterUI.SetActive(false);
 
             // Image 컴포넌트 가져오기
             Image monsterImage = monster.GetComponent<Image>();
@@ -266,9 +273,9 @@ public class Encounter : MonoBehaviour
     IEnumerator guFade()
     {
 
-        encounterUI.SetActive(true);
-        yield return new WaitForSeconds(1.3f);
-        encounterUI.SetActive(false);
+        //encounterUI.SetActive(true);
+        //yield return new WaitForSeconds(1.3f);
+        //encounterUI.SetActive(false);
 
         GameManager.Instance.isClear[2] = true;
 
@@ -315,9 +322,10 @@ public class Encounter : MonoBehaviour
 
     IEnumerator snakeFade()
     {
-        encounterUI.SetActive(true);
-        yield return new WaitForSeconds(1.3f);
-        encounterUI.SetActive(false);
+        yield return new WaitForSeconds(1.0f);
+        //encounterUI.SetActive(true);
+        //yield return new WaitForSeconds(1.3f);
+        //encounterUI.SetActive(false);
 
         float fadeCount = 0;
         while (fadeCount < 1.0f)
@@ -339,7 +347,7 @@ public class Encounter : MonoBehaviour
                 audioPlay.Play();
             }
 
-            // yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(1.0f);
 
             // Image 컴포넌트 가져오기
             Image monsterImage = monster.GetComponent<Image>();

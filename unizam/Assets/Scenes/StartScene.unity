@@ -1419,7 +1419,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d7514918583873d4d81fa958b7753b3a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ea8204917bde7746aca026089a35f27, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1889,6 +1889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a994062542e8abc4b91d46d3b70350d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  behaviours: []
   enemies: []
   Reward: {fileID: 0}
   monster: 0
