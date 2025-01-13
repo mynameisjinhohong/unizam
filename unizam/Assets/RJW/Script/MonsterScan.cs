@@ -20,9 +20,10 @@ public class MonsterScan : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ( collision.CompareTag("Enemy") == true)
+        if ( collision.CompareTag("Enemy") == true && collision.GetComponent<Encounter>().clear == false)
         {
-            hintUI.SetActive(true);
+            //hintUI.SetActive(true);
+            StartCoroutine(scan());
         }
     }
 
@@ -32,5 +33,11 @@ public class MonsterScan : MonoBehaviour
         {
             hintUI.SetActive(false);
         }
+    }
+
+    IEnumerator scan() {
+        hintUI.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        hintUI.SetActive(false);
     }
 }

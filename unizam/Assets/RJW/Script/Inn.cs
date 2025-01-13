@@ -13,6 +13,8 @@ public class Inn : MonoBehaviour
     public GameObject innUI;
     public GameObject popupUI;
     public TMP_Text popupText;
+
+    float temp = 0; 
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,14 @@ public class Inn : MonoBehaviour
     {
         if (enter && Input.GetKeyDown(KeyCode.Space)) {
             innUI.SetActive(true);
+            temp = GameObject.FindWithTag("Player").GetComponent<Player>().speed;
+            GameObject.FindWithTag("Player").GetComponent<Player>().speed = 0;
         }
+    }
+
+    public void closeInnUI()
+    {
+        GameObject.FindWithTag("Player").GetComponent<Player>().speed = temp;
     }
 
     public void randomEvent() {

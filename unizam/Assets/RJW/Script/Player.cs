@@ -46,7 +46,8 @@ public class Player : MonoBehaviour
 
 
             // 애니메이터 속도 설정
-            animator.SetFloat("speed", Mathf.Abs(inputVec.x));
+            if(speed != 0)
+                animator.SetFloat("speed", Mathf.Abs(inputVec.x));
 
         }
     }
@@ -54,7 +55,7 @@ public class Player : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (inputVec.x != 0 && GameManager.Instance.moveAble == true)
+        if (inputVec.x != 0 && GameManager.Instance.moveAble == true && speed != 0)
         {
             spriter.flipX = inputVec.x < 0;
         }

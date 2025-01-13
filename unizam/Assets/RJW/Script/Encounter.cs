@@ -16,6 +16,7 @@ public enum monster
 public class Encounter : MonoBehaviour
 {
     public bool isVisit = false;
+    public bool clear = false;
 
     public List<EnemeyData> enemy;
     public Sprite bg;
@@ -33,6 +34,9 @@ public class Encounter : MonoBehaviour
     //1 - 두억 등장, 2- 구미호 등장, 3- 이무기 등장
     public AudioSource audioPlay;
 
+
+    public GameObject encounterUI;
+
     void Start()
     {
     }
@@ -40,6 +44,8 @@ public class Encounter : MonoBehaviour
     void Update()
     {
         if (isVisit == true && Input.GetKeyDown(KeyCode.Space)) {
+
+            clear = true;
 
             switch (monster)
             {
@@ -97,6 +103,11 @@ public class Encounter : MonoBehaviour
     // du ///////////////////////////////////////////////
     IEnumerator duFade()
     {
+
+        encounterUI.SetActive(true);
+        yield return new WaitForSeconds(1.3f);
+        encounterUI.SetActive(false);
+
         GameManager.Instance.isClear[1] = true;
         float fadeCount = 0;
         while (fadeCount < 1.0f)
@@ -227,7 +238,11 @@ public class Encounter : MonoBehaviour
         {
             monster.gameObject.SetActive(true);
 
-            yield return new WaitForSeconds(1.0f);
+            //yield return new WaitForSeconds(1.0f);
+
+            encounterUI.SetActive(true);
+            yield return new WaitForSeconds(1.3f);
+            encounterUI.SetActive(false);
 
             // Image 컴포넌트 가져오기
             Image monsterImage = monster.GetComponent<Image>();
@@ -250,7 +265,21 @@ public class Encounter : MonoBehaviour
 
     IEnumerator guFade()
     {
+
+        encounterUI.SetActive(true);
+        yield return new WaitForSeconds(1.3f);
+        encounterUI.SetActive(false);
+
         GameManager.Instance.isClear[2] = true;
+
+        float fadeCount = 0;
+        while (fadeCount < 1.0f)
+        {
+            fadeCount += 0.01f;
+            yield return new WaitForSeconds(0.01f);
+            fadeImage.color = new Color(0, 0, 0, fadeCount);
+        }
+
         Transform monster = fadeImage.transform.Find("gumiho");
 
         if (monster != null)
@@ -286,6 +315,18 @@ public class Encounter : MonoBehaviour
 
     IEnumerator snakeFade()
     {
+        encounterUI.SetActive(true);
+        yield return new WaitForSeconds(1.3f);
+        encounterUI.SetActive(false);
+
+        float fadeCount = 0;
+        while (fadeCount < 1.0f)
+        {
+            fadeCount += 0.01f;
+            yield return new WaitForSeconds(0.01f);
+            fadeImage.color = new Color(0, 0, 0, fadeCount);
+        }
+
         Transform monster = fadeImage.transform.Find("emugi");
 
         if (monster != null)
@@ -298,7 +339,7 @@ public class Encounter : MonoBehaviour
                 audioPlay.Play();
             }
 
-            yield return new WaitForSeconds(1.0f);
+            // yield return new WaitForSeconds(1.0f);
 
             // Image 컴포넌트 가져오기
             Image monsterImage = monster.GetComponent<Image>();
