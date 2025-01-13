@@ -37,19 +37,19 @@ public class Inn : MonoBehaviour
                 GameManager.Instance.player.mp -= 1;
                 GameManager.Instance.player.hp += heal;
 
-                StartCoroutine(popUp("휴식을 통해 체력 " + heal + "을 얻었습니다."));
+                StartCoroutine(popUp("기 1을 소모하여 편히 쉰 덕에 체력 " + heal + "을 획득했다."));
                 spendNight = true;
             }
             else
             {
                 Debug.Log("기가 부족합니다.");
-                StartCoroutine(popUp("기가 부족합니다."));
+                StartCoroutine(popUp("기가 부족해 들어갈 수 없었다…"));
             }
         
         }
         else {
             Debug.Log("더 쉴 수는 없다");
-            StartCoroutine(popUp("더 쉴 수는 없습니다."));
+            StartCoroutine(popUp("더 쉴 수는 없다..."));
         }
     }
 
