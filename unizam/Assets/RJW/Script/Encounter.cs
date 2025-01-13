@@ -78,7 +78,6 @@ public class Encounter : MonoBehaviour
             Debug.Log("¹æ¹®");
             if (GameManager.Instance.isClear[clearIndex] == false)
             {
-                
                 audioPlay.clip = hintaudioAudio;
                 audioPlay.Play();
             }
