@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: MangSpecialAttack
   m_EditorClassIdentifier: 
   mpIdx: 2
+  behaviourText: "\uAD11\uC5ED\uAE30\uB85C \uBC94\uC704 \uB0B4 \uC0C1\uB300\uC5D0\uAC8C
+    4~8\uC758 \uD53C\uD574\uB97C \uC785\uD788\uACE0 \uAD50\uB780 \uC0C1\uD0DC\uC5D0
+    \uBE60\uC9C0\uAC8C \uD55C\uB2E4."
   state: 0
   character:
     hp: 50
@@ -27,7 +30,7 @@ MonoBehaviour:
   all: 1
   behaviourName: "\uC6D0\uD63C\uC758 \uC6B8\uC74C\uC18C\uB9AC"
   buff: {fileID: 11400000, guid: 806679e1504dd584ebadbb1ccdf6d3d0, type: 2}
-  maxDamage: 6
-  minDamage: 2
+  maxDamage: 8
+  minDamage: 4
   effect: {fileID: 2636853604688311438, guid: 69df49b7d0a4a1d4097649e8a658db6f, type: 3}
   effect2: {fileID: 2636853604688311438, guid: ec91b02b1032faa4e9b082b6fe6429c7, type: 3}

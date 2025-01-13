@@ -26,6 +26,7 @@ public class Intro : MonoBehaviour
             if (idx == sprites.Length)
             {
                 SceneManager.LoadScene("MainScene");
+                return;
             }
             sprite.sprite = sprites[idx];
         }

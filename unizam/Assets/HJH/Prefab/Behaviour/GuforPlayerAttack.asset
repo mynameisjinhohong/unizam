@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c363729df7173f44499d3b7232ee3cd8, type: 3}
+  m_Name: GuforPlayerAttack
+  m_EditorClassIdentifier: 
+  mpIdx: 0
+  behaviourText: "\uC0C1\uB300\uC5D0\uAC8C 10~12\uC758 \uD53C\uD574\uB97C \uC785\uD788\uACE0
+    \uD53C\uD574\uB7C9\uB9CC\uD07C \uC790\uC2E0\uC758 \uCCB4\uB825\uC744 \uD68C\uBCF5\uD55C\uB2E4"
+  state: 0
+  character:
+    hp: 0
+    buffs: []
+    nextBuffs: []
+    behaviours: []
+  unit: {fileID: 0}
+  all: 0
+  behaviourName: "\uC815\uAE30\uD761\uC218"
+  maxDamage: 12
+  minDamage: 10
+  effect: {fileID: 7270354889872654264, guid: 6d3d975ed0209a540bb48849870c8877, type: 3}
+  percentage: 1

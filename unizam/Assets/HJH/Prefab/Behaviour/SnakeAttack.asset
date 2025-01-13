@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SnakeAttack
   m_EditorClassIdentifier: 
   mpIdx: 0
+  behaviourText: 
   state: 0
   character:
     hp: 3
@@ -23,11 +24,11 @@ MonoBehaviour:
   unit: {fileID: 0}
   all: 0
   behaviourName: 
-  turn: 9
+  turn: 0
   nomalPercent: 30
   MinDamage: 6
   MaxDamage: 10
-  fireDamage: 13
+  fireDamage: 15
   buff: {fileID: 11400000, guid: 6610aec54c4055745a373bc411fb17aa, type: 2}
   skillName:
   - "\uD654\uC5FC\uC758 \uC624\uC624\uB77C"

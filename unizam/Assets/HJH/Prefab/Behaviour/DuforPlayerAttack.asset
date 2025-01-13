@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: DuforPlayerAttack
   m_EditorClassIdentifier: 
   mpIdx: 3
+  behaviourText: "\uC0C1\uB300\uC5D0\uAC8C \uC9C1\uC804\uC5D0 \uC783\uC740 \uCCB4\uB825\uC758
+    200%\uC5D0 \uB2EC\uD558\uB294 \uD53C\uD574\uB97C \uC785\uD78C\uB2E4."
   state: 0
   character:
     hp: 0
@@ -21,5 +23,5 @@ MonoBehaviour:
     behaviours: []
   unit: {fileID: 0}
   all: 0
-  behaviourName: 
+  behaviourName: "\uACE8\uD1B5\uBD80\uC218\uAE30"
   effect: {fileID: 54719681773886059, guid: 6d0e08a4734d53646948e62eb647400e, type: 3}

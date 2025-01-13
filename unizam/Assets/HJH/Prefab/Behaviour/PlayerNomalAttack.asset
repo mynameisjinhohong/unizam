@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: PlayerNomalAttack
   m_EditorClassIdentifier: 
   mpIdx: 0
+  behaviourText: "\uC0C1\uB300\uB97C \uAC80\uC73C\uB85C \uBCA0\uC5B4 4~8\uC758 \uD53C\uD574\uB97C
+    \uC785\uD78C\uB2E4."
   state: 0
   character:
     hp: 50
@@ -26,5 +28,5 @@ MonoBehaviour:
   unit: {fileID: 0}
   all: 0
   behaviourName: "\uBCA0\uAE30"
-  MaxDamage: 6
-  MinDamage: 2
+  MaxDamage: 8
+  MinDamage: 4

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ public class SkillButton : MonoBehaviour
     bool on = false;
     public Button skillButton;
     public GameObject[] skills;
-
+    public GameObject[] skillDescribe;
     public void Start()
     {
         OffSkillButton();
@@ -54,5 +55,27 @@ public class SkillButton : MonoBehaviour
             skills[i].GetComponent<Button>().interactable = false;
         }
         BattleManager.instance.State = BattleState.StartDice;
+    }
+
+    public void MouseHover(GameObject bto)
+    {
+        for (int i = 0; i < GameManager.Instance.player.behaviours.Count; i++)
+        {
+            if (bto.GetComponent<Button>().interactable)
+            {
+                skillDescribe[i].SetActive(true);
+            }
+            else
+            {
+                skillDescribe[i].SetActive(false);
+            }
+        }
+    }
+    public void MosetHoverOut()
+    {
+        for(int i =0; i < skillDescribe.Length; i++)
+        {
+            skillDescribe[i].SetActive(false);
+        }
     }
 }

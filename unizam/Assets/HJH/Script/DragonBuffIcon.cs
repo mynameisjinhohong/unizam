@@ -11,6 +11,6 @@ public class DragonBuffIcon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        buffText.text = (10 - BattleManager.instance.turn).ToString() + "턴 후 천 년의 응어리가 폭발합니다.";
+        buffText.text = (10 - BattleManager.instance.turn).ToString() + "턴 후 천 년의 응어리가 폭발한다.";
     }
 }

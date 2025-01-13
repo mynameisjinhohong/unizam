@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: GuSpecialAttack
   m_EditorClassIdentifier: 
   mpIdx: 4
+  behaviourText: 
   state: 0
   character:
-    hp: 40
+    hp: 37
     buffs: []
     nextBuffs: []
     behaviours:
@@ -33,6 +34,6 @@ MonoBehaviour:
   all: 0
   behaviourName: "\uC815\uAE30\uD761\uC218"
   maxDamage: 10
-  minDamage: 6
+  minDamage: 8
   effect: {fileID: 7270354889872654264, guid: 9a06858e7d02f884080de07b206db07b, type: 3}
-  effect2: {fileID: 7270354889872654264, guid: 6d3d975ed0209a540bb48849870c8877, type: 3}
+  percentage: 2

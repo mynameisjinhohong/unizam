@@ -8,18 +8,11 @@ public class GuSpecialAttack : Behaviour
     public int maxDamage;
     public int minDamage;
     public GameObject effect;
-    public GameObject effect2;
+    public int percentage;
     public override void Do(Character[] target)
     {
         BattleManager.instance.PlaySound(5);
-        if (unit.name == "Player")
-        {
-            Instantiate(effect2);
-        }
-        else
-        {
-            Instantiate(effect);
-        }
+        Instantiate(effect);
         for (int i = 0; i < target.Length; i++)
         {
             int damage = Random.Range(minDamage, maxDamage);
@@ -32,7 +25,7 @@ public class GuSpecialAttack : Behaviour
                 damage = target[i].buffs[k].BuffEffect(false, damage);
             }
             target[i].hp -= damage;
-            character.hp += damage / 2;
+            character.hp += damage / percentage;
         }
     }
 }

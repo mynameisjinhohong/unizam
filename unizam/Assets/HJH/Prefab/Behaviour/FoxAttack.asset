@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: FoxAttack
   m_EditorClassIdentifier: 
   mpIdx: 0
+  behaviourText: 
   state: 1
   character:
-    hp: -11
+    hp: 12
     buffs: []
     nextBuffs: []
     behaviours:
@@ -23,5 +24,5 @@ MonoBehaviour:
   unit: {fileID: 0}
   all: 0
   behaviourName: 
-  MaxDamage: 5
-  MinDamage: 1
+  MaxDamage: 4
+  MinDamage: 2

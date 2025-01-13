@@ -70,6 +70,7 @@ public class BattleManager : MonoBehaviour
 
         }
     }
+
     //두억시니 스킬만을 위한 에드훅
     public int beforeDamage;
 
@@ -112,6 +113,7 @@ public class BattleManager : MonoBehaviour
     public Button quit;
 
     public GameObject clear;
+    bool clearBool = false;
 
     public void PlaySound(int idx)
     {
@@ -147,6 +149,7 @@ public class BattleManager : MonoBehaviour
 
         private void Start()
     {
+        clearBool = false;
         clear.SetActive(false);
         for(int i =0; i < GameManager.Instance.player.behaviours.Count; i++)
         {
@@ -283,6 +286,13 @@ public class BattleManager : MonoBehaviour
 
     private void Update()
     {
+        if (clear)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                NextScene();
+            }
+        }
         if (choose)
         {
             Vector3 mousePos = Input.mousePosition;
@@ -334,6 +344,7 @@ public class BattleManager : MonoBehaviour
         skillButton.gameObject.GetComponent<Button>().interactable = false;
         State = BattleState.ChooseEnemy;
     }
+
 
     public void ChooseSkill(int idx)
     {
@@ -565,6 +576,7 @@ public class BattleManager : MonoBehaviour
         }
         yield return new WaitForSeconds(1.5f);
         clear.SetActive(true);
+        clearBool = true;
     }
 
     public void NextScene()
