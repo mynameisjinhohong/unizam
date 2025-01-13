@@ -40,6 +40,7 @@ public class Encounter : MonoBehaviour
     void Update()
     {
         if (isVisit == true && Input.GetKeyDown(KeyCode.Space)) {
+
             switch (monster)
             {
                 case monster.du:
@@ -69,7 +70,6 @@ public class Encounter : MonoBehaviour
             }
         }
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

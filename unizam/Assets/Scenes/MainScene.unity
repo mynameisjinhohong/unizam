@@ -981,7 +981,7 @@ GameObject:
   - component: {fileID: 290928070}
   m_Layer: 5
   m_Name: innUI_ rest_popup
-  m_TagString: Untagged
+  m_TagString: InnUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1849,7 +1849,7 @@ GameObject:
   - component: {fileID: 925601922}
   m_Layer: 5
   m_Name: innUI
-  m_TagString: Untagged
+  m_TagString: InnUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3272,7 +3272,7 @@ GameObject:
   - component: {fileID: 1435324335}
   m_Layer: 5
   m_Name: innUI (1)
-  m_TagString: Untagged
+  m_TagString: InnUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4264,6 +4264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a994062542e8abc4b91d46d3b70350d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  behaviours: []
   enemies: []
   Reward: {fileID: 0}
   monster: 0
@@ -4725,7 +4726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7378354447760939170, guid: a2fc1ae97a48a5c49965942d63716f9c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 108
+      value: 95.81
       objectReference: {fileID: 0}
     - target: {fileID: 7378354447760939170, guid: a2fc1ae97a48a5c49965942d63716f9c, type: 3}
       propertyPath: m_LocalScale.y
@@ -4911,7 +4912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 321051014121505532, guid: 225d318e7b024f2418cddf53b0d6135e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5954.3
+      value: 6035.37
       objectReference: {fileID: 0}
     - target: {fileID: 321051014121505532, guid: 225d318e7b024f2418cddf53b0d6135e, type: 3}
       propertyPath: m_LocalPosition.y

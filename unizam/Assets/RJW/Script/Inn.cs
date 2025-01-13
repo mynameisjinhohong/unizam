@@ -42,8 +42,8 @@ public class Inn : MonoBehaviour
             }
             else
             {
-                Debug.Log("마나가 부족합니다.");
-                StartCoroutine(popUp("마나가 부족합니다."));
+                Debug.Log("기가 부족합니다.");
+                StartCoroutine(popUp("기가 부족합니다."));
             }
         
         }

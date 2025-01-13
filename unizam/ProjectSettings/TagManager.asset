@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Inn
+  - InnUI
   layers:
   - Default
   - TransparentFX
