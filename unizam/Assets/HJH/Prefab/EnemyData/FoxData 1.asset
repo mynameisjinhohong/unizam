@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FoxData 1
   m_EditorClassIdentifier: 
   enemy:
-    hp: 15
+    hp: 12
     buffs: []
     nextBuffs: []
     behaviours:
