@@ -7137,7 +7137,7 @@ MonoBehaviour:
   - {fileID: 1950938277}
   - {fileID: 24422339}
   - {fileID: 187669057}
-  question: {fileID: 0}
+  question: {fileID: 21300000, guid: ed4f208db216fe649aca5ab4a6d0c8b1, type: 3}
 --- !u!1 &1225377820
 GameObject:
   m_ObjectHideFlags: 0
