@@ -62,6 +62,8 @@ public class DiceAni : MonoBehaviour
             if(idx == GameManager.Instance.player.behaviours[i].mpIdx)
             {
                 skillTexts.text = GameManager.Instance.player.behaviours[i].behaviourName;
+                skillDescribeText.text = GameManager.Instance.player.behaviours[i].behaviourText;
+
                 break;
             }
         }

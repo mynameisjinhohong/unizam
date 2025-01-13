@@ -8,7 +8,7 @@ public class outro : MonoBehaviour
 {
     public Sprite[] sprites;
     public Image sprite;
-    int idx = 0;
+    public int idx = 0;
     // Update is called once per frame
     void Update()
     {
@@ -25,6 +25,7 @@ public class outro : MonoBehaviour
             if (idx == sprites.Length)
             {
                 SceneManager.LoadScene("StartScene");
+                return;
             }
             sprite.sprite = sprites[idx];
         }

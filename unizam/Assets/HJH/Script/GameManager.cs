@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
         player.hp = maxHp;
         player.mp = 0;
         playerPos = new Vector3(-4.71f, -3.31f, 0);
+        player.buffs.Clear();
         player.behaviours.Clear();
         for (int i = 0; i < behaviours.Count; i++)
         {
@@ -164,6 +165,7 @@ public class GameManager : MonoBehaviour
         // StartScene에서는 Canvas 비활성화
         if (scene.name == "StartScene")
         {
+            Init();
             canvas.SetActive(false);
         }
         // MainScene에서는 Canvas 활성화
@@ -176,7 +178,6 @@ public class GameManager : MonoBehaviour
             BattleManager.instance.restart.onClick.AddListener(() =>
             {
                 Quit();
-                Init();
             }
             );
             BattleManager.instance.quit.onClick.AddListener(() => Quit2());

@@ -59,21 +59,19 @@ public class SkillButton : MonoBehaviour
 
     public void MouseHover(GameObject bto)
     {
-        for (int i = 0; i < GameManager.Instance.player.behaviours.Count; i++)
+        for (int i = 0; i < skillDescribe.Length; i++)
         {
-            if (bto.GetComponent<Button>().interactable)
-            {
-                skillDescribe[i].SetActive(true);
-            }
-            else
-            {
-                skillDescribe[i].SetActive(false);
-            }
+            skillDescribe[i].SetActive(false);
         }
+        if (bto.GetComponent<Button>().interactable)
+        {
+            bto.transform.GetChild(1).gameObject.SetActive(true);
+        }
+
     }
     public void MosetHoverOut()
     {
-        for(int i =0; i < skillDescribe.Length; i++)
+        for (int i = 0; i < skillDescribe.Length; i++)
         {
             skillDescribe[i].SetActive(false);
         }

@@ -28,12 +28,13 @@ public class Intro : MonoBehaviour
                 SceneManager.LoadScene("MainScene");
                 return;
             }
+            Debug.Log(sprites[1].name);
+            Debug.Log(sprites[idx].name);
             sprite.sprite = sprites[idx];
+
         }
         else
         {
-
-
             SceneManager.LoadScene("MainScene");
         }
 

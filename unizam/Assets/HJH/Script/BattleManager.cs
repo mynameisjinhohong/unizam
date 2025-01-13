@@ -286,7 +286,7 @@ public class BattleManager : MonoBehaviour
 
     private void Update()
     {
-        if (clear)
+        if (clearBool)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -582,6 +582,7 @@ public class BattleManager : MonoBehaviour
     public void NextScene()
     {
         GameManager.Instance.player.behaviours.Add(GameManager.Instance.Reward);
+        GameManager.Instance.player.buffs.Clear();
         SceneManager.LoadScene("MainScene");
     }
 
