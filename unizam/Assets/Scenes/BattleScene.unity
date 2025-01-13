@@ -5002,7 +5002,7 @@ MonoBehaviour:
   restart: {fileID: 574345332}
   quit: {fileID: 1119170438}
   clear: {fileID: 932557950}
-  clearBool: 0
+  clearBoolPublic: 0
   snakeSlider: {fileID: 0}
   dragon: {fileID: 0}
   dragon2: {fileID: 0}
@@ -8869,7 +8869,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 9880, y: 9000}
-  m_SizeDelta: {x: 250, y: 38}
+  m_SizeDelta: {x: 200, y: 38}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1754456520
 MonoBehaviour:
@@ -9657,7 +9657,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 9880, y: 9000}
-  m_SizeDelta: {x: 250, y: 38}
+  m_SizeDelta: {x: 200, y: 38}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1928643418
 MonoBehaviour:
