@@ -24,7 +24,8 @@ public class Inn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enter && Input.GetKeyDown(KeyCode.Space)) {
+        if (enter) {
+            enter = false;
             innUI.SetActive(true);
             temp = GameObject.FindWithTag("Player").GetComponent<Player>().speed;
             GameObject.FindWithTag("Player").GetComponent<Player>().speed = 0;
@@ -33,6 +34,7 @@ public class Inn : MonoBehaviour
 
     public void closeInnUI()
     {
+        innUI.SetActive(false);
         GameObject.FindWithTag("Player").GetComponent<Player>().speed = temp;
     }
 

@@ -47,6 +47,10 @@ public class Encounter : MonoBehaviour
 
             clear = true;
 
+            if(GameObject.FindWithTag("Hint") != null && GameObject.FindWithTag("Hint").active == true)
+                GameObject.FindWithTag("Hint").SetActive(false);
+
+
             switch (monster)
             {
                 case monster.du:
@@ -64,7 +68,7 @@ public class Encounter : MonoBehaviour
                     }
                     break;
                 case monster.snake:
-                    StartCoroutine(snakeFade());
+                    //StartCoroutine(snakeFade());
                     GameManager.Instance.moveAble = false;
                     break;
                 case monster.man:
@@ -93,11 +97,12 @@ public class Encounter : MonoBehaviour
                 audioPlay.Play();
             }
             isVisit = true;
-            /*
+
+            
             if (monster == monster.snake) {
                 StartCoroutine(snakeFade());
             }
-            */
+            
         }
     }
 
@@ -116,17 +121,37 @@ public class Encounter : MonoBehaviour
         //encounterUI.SetActive(false);
 
         GameManager.Instance.isClear[1] = true;
-        float fadeCount = 0;
-        while (fadeCount < 1.0f)
-        {
-            fadeCount += 0.01f;
-            yield return new WaitForSeconds(0.01f);
-            fadeImage.color = new Color(0, 0, 0, fadeCount);
-        }
 
         Transform monster = fadeImage.transform.Find("downToUP");
         if (monster != null)
         {
+            float fadeCount = 0;
+
+            // 빠르게 하얀색으로 깜빡이는 반복
+            for (int i = 0; i < 3; i++) // 3번 깜빡이기
+            {
+                // 하얀색으로 페이드 인
+                while (fadeCount < 1.0f)
+                {
+                    fadeCount += 0.1f; // 페이드 속도 조정
+                    fadeImage.color = new Color(1, 1, 1, fadeCount); // 하얀색으로 변경
+                    yield return new WaitForSeconds(0.02f);
+                }
+
+                // 초기화
+                fadeCount = 0;
+
+                // 하얀색으로 페이드 아웃
+                while (fadeCount < 1.0f)
+                {
+                    fadeCount += 0.1f;
+                    fadeImage.color = new Color(1, 1, 1, 1 - fadeCount); // 투명으로 변경
+                    yield return new WaitForSeconds(0.02f);
+                }
+
+                fadeCount = 0;
+            }
+
             monster.gameObject.SetActive(true);
             if (encounterAudio != null) { 
                 audioPlay.clip = encounterAudio;
@@ -243,16 +268,58 @@ public class Encounter : MonoBehaviour
 
         if (monster != null)
         {
+
+            float fadeCount = 0;
+
+            // 빠르게 하얀색으로 깜빡이는 반복
+            for (int i = 0; i < 3; i++) // 3번 깜빡이기
+            {
+                // 하얀색으로 페이드 인
+                while (fadeCount < 1.0f)
+                {
+                    fadeCount += 0.1f; // 페이드 속도 조정
+                    fadeImage.color = new Color(1, 1, 1, fadeCount); // 하얀색으로 변경
+                    yield return new WaitForSeconds(0.02f);
+                }
+
+                // 초기화
+                fadeCount = 0;
+
+                // 하얀색으로 페이드 아웃
+                while (fadeCount < 1.0f)
+                {
+                    fadeCount += 0.1f;
+                    fadeImage.color = new Color(1, 1, 1, 1 - fadeCount); // 투명으로 변경
+                    yield return new WaitForSeconds(0.02f);
+                }
+
+                fadeCount = 0;
+            }
+
+            // 검은색으로 완전히 페이드 아웃
+            while (fadeCount < 1.0f)
+            {
+                fadeCount += 0.01f;
+                fadeImage.color = new Color(0, 0, 0, fadeCount); // 검은색으로 변경
+                yield return new WaitForSeconds(0.01f);
+            }
+
+            /*
             monster.gameObject.SetActive(true);
 
             //yield return new WaitForSeconds(1.0f);
 
-           // encounterUI.SetActive(true);
+            // encounterUI.SetActive(true);
             //yield return new WaitForSeconds(1.3f);
             //encounterUI.SetActive(false);
 
+            StartCoroutine(BlinkFade());
+            */
+
             // Image 컴포넌트 가져오기
             Image monsterImage = monster.GetComponent<Image>();
+
+            
             if (monsterImage != null)
             {
                 // 색상 변경 시작
@@ -279,6 +346,7 @@ public class Encounter : MonoBehaviour
 
         GameManager.Instance.isClear[2] = true;
 
+        /*
         float fadeCount = 0;
         while (fadeCount < 1.0f)
         {
@@ -286,11 +354,48 @@ public class Encounter : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
             fadeImage.color = new Color(0, 0, 0, fadeCount);
         }
+        */
+
 
         Transform monster = fadeImage.transform.Find("gumiho");
 
         if (monster != null)
         {
+            float fadeCount = 0;
+
+            // 빠르게 하얀색으로 깜빡이는 반복
+            for (int i = 0; i < 3; i++) // 3번 깜빡이기
+            {
+                // 하얀색으로 페이드 인
+                while (fadeCount < 1.0f)
+                {
+                    fadeCount += 0.1f; // 페이드 속도 조정
+                    fadeImage.color = new Color(1, 1, 1, fadeCount); // 하얀색으로 변경
+                    yield return new WaitForSeconds(0.02f);
+                }
+
+                // 초기화
+                fadeCount = 0;
+
+                // 하얀색으로 페이드 아웃
+                while (fadeCount < 1.0f)
+                {
+                    fadeCount += 0.1f;
+                    fadeImage.color = new Color(1, 1, 1, 1 - fadeCount); // 투명으로 변경
+                    yield return new WaitForSeconds(0.02f);
+                }
+
+                fadeCount = 0;
+            }
+
+            // 검은색으로 완전히 페이드 아웃
+            while (fadeCount < 1.0f)
+            {
+                fadeCount += 0.01f;
+                fadeImage.color = new Color(0, 0, 0, fadeCount); // 검은색으로 변경
+                yield return new WaitForSeconds(0.01f);
+            }
+
             monster.gameObject.SetActive(true);
 
             if (encounterAudio != null)
@@ -327,18 +432,46 @@ public class Encounter : MonoBehaviour
         //yield return new WaitForSeconds(1.3f);
         //encounterUI.SetActive(false);
 
-        float fadeCount = 0;
-        while (fadeCount < 1.0f)
-        {
-            fadeCount += 0.01f;
-            yield return new WaitForSeconds(0.01f);
-            fadeImage.color = new Color(0, 0, 0, fadeCount);
-        }
 
         Transform monster = fadeImage.transform.Find("emugi");
 
         if (monster != null)
         {
+            float fadeCount = 0;
+
+            // 빠르게 하얀색으로 깜빡이는 반복
+            for (int i = 0; i < 3; i++) // 3번 깜빡이기
+            {
+                // 하얀색으로 페이드 인
+                while (fadeCount < 1.0f)
+                {
+                    fadeCount += 0.1f; // 페이드 속도 조정
+                    fadeImage.color = new Color(1, 1, 1, fadeCount); // 하얀색으로 변경
+                    yield return new WaitForSeconds(0.02f);
+                }
+
+                // 초기화
+                fadeCount = 0;
+
+                // 하얀색으로 페이드 아웃
+                while (fadeCount < 1.0f)
+                {
+                    fadeCount += 0.1f;
+                    fadeImage.color = new Color(1, 1, 1, 1 - fadeCount); // 투명으로 변경
+                    yield return new WaitForSeconds(0.02f);
+                }
+
+                fadeCount = 0;
+            }
+
+                        // 검은색으로 완전히 페이드 아웃
+            while (fadeCount < 1.0f)
+            {
+                fadeCount += 0.01f;
+                fadeImage.color = new Color(0, 0, 0, fadeCount); // 검은색으로 변경
+                yield return new WaitForSeconds(0.01f);
+            }
+
             monster.gameObject.SetActive(true);
 
             if (encounterAudio != null)
@@ -391,6 +524,7 @@ public class Encounter : MonoBehaviour
 
     IEnumerator FadeToBlack2(Image monsterImage)
     {
+
         Color initialColor = monsterImage.color;
         Color targetColor = Color.black; // 검은색으로 변경
 

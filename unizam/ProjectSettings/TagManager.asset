@@ -8,6 +8,7 @@ TagManager:
   - Inn
   - InnUI
   - Scan
+  - Hint
   layers:
   - Default
   - TransparentFX
