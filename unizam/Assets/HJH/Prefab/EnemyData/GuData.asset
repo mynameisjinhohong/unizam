@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GuData
   m_EditorClassIdentifier: 
   enemy:
-    hp: 40
+    hp: 35
     buffs: []
     nextBuffs: []
     behaviours:

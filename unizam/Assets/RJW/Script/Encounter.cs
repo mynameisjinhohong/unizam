@@ -69,7 +69,12 @@ public class Encounter : MonoBehaviour
                     break;
                 case monster.snake:
                     //StartCoroutine(snakeFade());
-                    GameManager.Instance.moveAble = false;
+                    //GameManager.Instance.moveAble = false;
+                    if (GameManager.Instance.isClear[0] == true && GameManager.Instance.isClear[1] == true && GameManager.Instance.isClear[2] == true)
+                    {
+                        StartCoroutine(snakeFade());
+                        GameManager.Instance.moveAble = false;
+                    }
                     break;
                 case monster.man:
                     if (GameManager.Instance.isClear[0] == false)
@@ -98,11 +103,11 @@ public class Encounter : MonoBehaviour
             }
             isVisit = true;
 
-            
+            /*
             if (monster == monster.snake) {
                 StartCoroutine(snakeFade());
             }
-            
+            */
         }
     }
 
