@@ -4689,6 +4689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a27bcead7db774b82ef195288a46b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  on: 0
   skillButton: {fileID: 837064596}
   skills:
   - {fileID: 1382922887}
@@ -5904,7 +5905,7 @@ MonoBehaviour:
   beforeDamage: 0
   gameOver: {fileID: 875310479}
   player: {fileID: 782735168}
-  skillButton: {fileID: 1197713843}
+  skillButton: {fileID: 837064595}
   spawnPos1:
   - {fileID: 0}
   spawnPos2:
@@ -7892,6 +7893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a27bcead7db774b82ef195288a46b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  on: 0
   skillButton: {fileID: 1197713840}
   skills:
   - {fileID: 89398358}
