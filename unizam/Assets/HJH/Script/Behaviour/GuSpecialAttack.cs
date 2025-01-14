@@ -27,6 +27,7 @@ public class GuSpecialAttack : Behaviour
             target[i].hp -= damage;
             character.hp += damage / percentage;
         }
-        unit.GetComponent<BattleEnemy>().SkillCanvasGo();
+        if (unit.name != "Player")
+            unit.GetComponent<BattleEnemy>().SkillCanvasGo();
     }
 }
