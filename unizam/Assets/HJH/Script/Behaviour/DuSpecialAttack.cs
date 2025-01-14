@@ -45,11 +45,13 @@ public class DuSpecialAttack : Behaviour
                 {
                     damage = target[i].buffs[k].BuffEffect(false, damage);
                 }
-                Debug.Log(damage);
                 target[i].hp -= damage;
             }
             wait = true;
+            unit.GetComponent<BattleEnemy>().SkillCanvasGo();
         }
         hp = character.hp;
     }
+
+
 }

@@ -16,6 +16,7 @@ public class BattleEnemy : MonoBehaviour
     public bool destroy = false;
     public GameObject dieEffect1;
     public GameObject dieEffect2;
+    public GameObject skillCanvas;
     bool die = false;
     // Start is called before the first frame update
     void Start()
@@ -60,6 +61,18 @@ public class BattleEnemy : MonoBehaviour
             }
         }
     }
+
+    public void SkillCanvasGo()
+    {
+        StartCoroutine(SkillCanvasOn());
+    }
+    IEnumerator SkillCanvasOn()
+    {
+        skillCanvas.SetActive(true);
+        yield return new WaitForSeconds(1);
+        skillCanvas.SetActive(false);
+    }
+
 
     public void MakeBuff()
     {
