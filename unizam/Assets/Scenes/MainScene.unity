@@ -5729,7 +5729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1856320214897992771, guid: 225d318e7b024f2418cddf53b0d6135e, type: 3}
       propertyPath: heal
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1856320214897992771, guid: 225d318e7b024f2418cddf53b0d6135e, type: 3}
       propertyPath: innUI
