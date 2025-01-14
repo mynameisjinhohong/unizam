@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SkillButton : MonoBehaviour
 {
-    bool on = false;
+    public bool on = false;
     public Button skillButton;
     public GameObject[] skills;
     public GameObject[] skillDescribe;
