@@ -48,6 +48,7 @@ public class SnakeAttack : Behaviour
                 }
                 target[0].hp -= damage;
                 fire = false;
+                unit.GetComponent<BattleEnemy>().SkillCanvasGo();
             }
             else
             {

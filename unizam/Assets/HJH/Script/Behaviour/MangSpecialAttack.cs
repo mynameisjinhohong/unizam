@@ -35,7 +35,8 @@ public class MangSpecialAttack : Behaviour
             target[i].hp -= damage;
             target[i].nextBuffs.Add(buff);
         }
+        if(unit.name != "Player")
+            unit.GetComponent<BattleEnemy>().SkillCanvasGo();
 
-        
     }
 }
